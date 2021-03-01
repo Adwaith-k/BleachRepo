@@ -1,0 +1,390 @@
+
+{% extends 'headerfooter.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+// font stuff
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
+
+
+// colour stuff
+@white: #ffffff;
+@lightBG: #dce1df;
+@salmon: #ff6666;
+
+@teal: #0096a0;
+@tealMid: #0ebac7;
+@tealContrast: #33ffff;
+@tealShade: #007c85;
+
+@darkGrey: #4f585e;
+
+body {
+  background: @lightBG;
+  color: @darkGrey;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a.btn {
+  background: @teal;
+  border-radius: 4px;
+  box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
+  color: @white;
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s 0s ease-out;
+}
+
+.no-touch a.btn:hover {
+  background: lighten(@teal,2.5);
+  box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+}
+
+.no-touch a.btn:active,
+a.btn:active {
+  background: darken(@teal,2.5);
+  box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+  transform: translate3d(0,1px,0);
+  transition: all 0.025s 0s ease-out;
+}
+
+div.cards {
+  margin: 80px auto;
+  max-width: 960px;
+  text-align: center;
+}
+
+div.card {
+  background: @white;
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  transition: all 0.3s 0s ease-in;
+  width: 300px;
+  z-index: 1;
+
+  img {
+    max-width: 300px;
+  }
+  
+  .card__image-holder {
+    background: rgba(0,0,0,0.1);
+    height: 0;
+    padding-bottom: 75%;
+  }
+
+  div.card-title {
+    background: @white;
+    padding: 6px 15px 10px;
+    position: relative;
+    z-index: 0;
+    
+    a.toggle-info {
+      border-radius: 32px;
+      height: 32px;
+      padding: 0;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      width: 32px;
+      
+      span {
+        background: @white;
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 16px;
+        transition: all 0.15s 0s ease-out;
+        width: 12px;
+      }
+      
+      span.left {
+        right: 14px;
+        transform: rotate(45deg);
+      }
+      span.right {
+        left: 14px;
+        transform: rotate(-45deg);
+      }
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      margin: 0;
+      padding: 0;
+      
+      small {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+      }
+    }
+  }
+
+  div.card-description {
+    padding: 0 15px 10px;
+    position: relative;
+    font-size: 14px;
+  }
+
+  div.card-actions {
+    box-shadow: 0 2px 0px 0 rgba(0,0,0,0.075);
+    padding: 10px 15px 20px;
+    text-align: center;
+  }
+  
+  div.card-flap {
+    background: darken(@white,15);
+    position: absolute;
+    width: 100%;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+  }
+  div.flap1 {
+    transition: all 0.3s 0.3s ease-out;
+    z-index: -1;
+  }
+  div.flap2 {
+    transition: all 0.3s 0s ease-out;
+    z-index: -2;
+  }
+  
+}
+
+div.cards.showing {
+  div.card {
+    cursor: pointer;
+    opacity: 0.6;
+    transform: scale(0.88);
+  }
+}
+
+.no-touch  div.cards.showing {
+  div.card:hover {
+    opacity: 0.94;
+    transform: scale(0.92);
+  }
+}
+div.card:hover {
+    opacity: 0.94;
+    transform: scale(0.92);
+    box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
+  }
+
+div.card.show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+
+  div.card-title {
+    a.toggle-info {
+      background: @salmon !important;
+      span {
+        top: 15px;
+      }
+      span.left {
+        right: 10px;
+      }
+      span.right {
+        left: 10px;
+      }
+    }
+  }
+  div.card-flap {
+    background: @white;
+    transform: rotateX(0deg);
+  }
+  div.flap1 {
+    transition: all 0.3s 0s ease-out;
+  }
+  div.flap2 {
+    transition: all 0.3s 0.2s ease-out;
+  }
+}
+
+
+
+</style>
+    <div class="amg-floating-contacts wwww">
+
+
+      <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1-555-555-5555">(555) 555-5555</a>
+        </div>
+      </div>
+     <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+         <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1-555-555-5555">(555) 555-5555</a>
+        </div>
+      </div>
+	  
+	    <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="mailto:mail@mail.com">mail@mail.com</a>
+        </div>
+      </div>
+	  
+	  
+	  
+	   
+	  
+	  
+    </div>
+    <!-- End Main Header -->
+
+    <!-- Page Title -->
+   <!--  <section class="page-title-two">
+		<div class="layer-one" style="background-image: url({% static 'five/images/icons/covid-1.png' %})"></div>
+		<div class="layer-three" style="background-image: url({% static 'five/images/background/pattern-18.png' %})"></div>
+    	<div class="auto-container">
+        <h1 style="color: black;">Products Details</h1>
+			<ul class="page-breadcrumb">
+				<li><a href="index.html">home</a></li>
+				<li>Products</li>
+			</ul>
+
+			<h1></h1>
+        </div>
+    </section> -->
+    <section class="page-title" style="background-image:url({% static 'four/images/background/pattern-4.png' %})">
+
+      <div class="auto-container"><br><br>
+      <h1 style="color: black;">Career Page</h1>
+      
+        </div>
+    </section>
+    <!-- End Page Title -->
+	<div class="container-fluid ">
+    <!-- <section class="page-title" style="background-image:url({% static 'four/images/pattern-4.png' %})"> -->
+
+	<div class="row" style="padding-top: 0px; background-image:url({% static 'four/images/background/pattern-4.png' %})">
+{% for i in ob %}
+
+  <!-- <img class="card-img-top" src="img_avatar3.png" alt="image" style="width:50%"> -->
+
+<div class="cards">
+<a href="">
+  <div class="card" style="text-align: center; box-shadow: 0px 0px 30px rgba(0,0,0,0.07); overflow: hidden;position: relative;">
+   
+    <div class="card-title">
+      <a href="#" class="toggle-info btn">
+        <span class="left"></span>
+        <span class="right"></span>
+      </a>
+      <h4>{{i.jobtitle}} </h4>
+    </div>
+     <b style="font-size: 20px;">{{i.jobtype}}</b><strike></strike>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        {{i.description}}
+      </div><br>
+      <div class="card-flap flap2">
+        <div class="card-actions" style="padding: 10px;">
+          <!-- <a href="#" class="btn">Read more</a> -->
+    <!-- <a href="/wishlistproductdelete/{{i.id}}" class="btn btn-danger fa fa-trash" style="border-radius: 50%;padding: 10px;"></a> -->
+
+    <form action="/applyjob/?jbid={{i.id}}" method="post" enctype="multipart/form-data">
+
+
+                                   {% csrf_token %}
+                                    <td><div class="form-group row">
+                                            <label class="col-form-label col-md-3 col-sm-3 "></label>
+                                            <div class="col-md-9 col-sm-9 ">
+
+                                            <input id="inputText9" type="file" class="form-control" name="notesfile" style="border: 0px solid black;padding-left: 90px;">
+                                                <span class="" aria-hidden="true"></span>
+                                                
+
+
+                                            </div>
+                                        </div>
+                                      </td>
+               <td><button type="submit" class="p-2 mb-2 bg-primary text-white" style="background-color: #00000024;">
+                                                    <b>APPLY HERE</b></button><br></td>
+                                                </form>
+
+    <!-- <a href="/cartnew/?faid={{i.id}}" class="btn btn-success fa fa-shopping-cart" style="border-radius: 50%; padding: 10px;"></a> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+  
+
+  
+</div>
+{% endfor %}
+
+
+
+ 
+
+
+
+
+
+ 
+</div>
+
+</div>
+
+					</div>
+	<!-- Service Section Two -->
+	<section class="service-section-two style-two">
+		<div class="layer-one" style="background-image: url({% static 'five/images/background/pattern-4.png' %})"></div>
+		<div class="layer-three" style="background-image: url({% static 'five/images/background/pattern-6.png' %})"></div>
+		<div class="auto-container">
+			<div class="inner-container">
+				<div class="layer-two" style="background-image: url({% static 'five/images/background/pattern-5.png' %})"></div>
+				
+				<div class="row clearfix">
+					
+
+
+</div>
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Service Section Two -->
+	
+	<!-- Environmental Section -->
+    
+    <!-- End Environmental Section -->
+	
+	<!-- Video Section Two -->
+	
+	<!-- End Video Section Two -->
+	
+	<!-- Sanitizer Section -->
+	
+	<!-- End Sanitizer Section -->
+	
+	<!-- Call To Action Section -->
+	{% endblock %}

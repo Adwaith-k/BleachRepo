@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+
+<html>
+<style type="text/css">
+    @green: #3165bf;
+@transition: top .3s ease-in-out;
+.service-block-three .inner-box .h4{
+      margin-top: 4px;
+    
+}
+.show-more {
+    display: block;
+    border: 2px solid #3165bf;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.arrows {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+}
+
+.show-more-button  {
+
+
+margin-top: 20px;
+    display: block;
+    text-decoration: none;
+    /*color: #0056b3;*/
+            color: darkblue;
+
+    text-align: center;
+}
+
+    .show-more-button:hover .arrow{
+
+        
+            top: 70px;
+            transition: @transition;
+        }
+        
+
+        
+        .arrow-hidden {
+            top: 12px;
+            transition: @transition;
+        }
+    }
+
+    .arrow, .arrow-hidden {
+        width: 2px;
+        height:25px;
+        background: #3165bf;
+        display: inline-block;
+        position: absolute;
+        top: 12px;
+        left: 24px;
+        
+        transition: @transition;
+    }
+
+        .arrow, .arrow-hidden :before {
+            content: "";
+            width: 2px;
+            height:15px;
+            display: block;
+            background: #3165bf;
+            position: absolute;
+            transform: rotate(45deg);
+            bottom: 0;
+            right: -6px;
+            bottom: -1px;
+        }
+
+        .arrow, .arrow-hidden :after {
+            content: "";
+            width: 2px;
+            height:15px;
+            display: block;
+            background: #3165bf;
+            position: absolute;
+            transform: rotate(135deg);
+            bottom: -1px;
+            left: -6px;
+
+        }
+        
+        
+    }
+    .arrow-hidden {
+            top: -80px;
+
+        }
+}
+
+.show-more-text {
+    margin-top: 10px;
+    display: block;
+    font-weight: 600;
+}
+
+#service2
+{
+    background-image: url({% static 'four/images/16.jpg' %}); 
+    width:150px;
+    height: 325px;
+    background-size: cover; 
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-left: -33px;
+    margin-top: -42px;
+}
+#service3{
+     width:325px;
+     height: 154px;
+     background-size: cover;
+     margin-left: -51px;
+     margin-top: -6px;
+    
+     
+
+}
+#service4{
+     width:325px;height: 157px;background-size: cover;padding-top: 0px;margin-top: -20px;margin-left: -51px;
+}
+#shop1{
+     background-size: cover; height: 250px; width: 300px;margin-left: -31px;margin-top: -19px;
+}
+#shop2{
+     background-size: cover; height: 250px;width: 300px;margin-left: -47px;margin-top: -19px;
+
+}
+#shop3{
+     background-color: #8accff;padding: 20px;background-image:url({% static 'four/images/14.jpg' %}); width: 302px;
+    margin-left: -48px;
+}
+#shop4{
+     background-color: #8accff;padding: 20px;margin-top: 10px; background-image:url({% static 'four/images/6.jpg' %}); width: 302px;
+    margin-left: -48px;
+}
+#shop5{
+     padding: 20px; margin-left: -20px;
+
+}
+
+
+#column1{
+    width: 125%;
+    height: 100%;
+    margin-left: 92px
+}
+#row1{
+     height: 347px;
+}
+#row2{
+    height: 400px;
+}
+#content{
+     margin-left:20px;
+}
+#blog1{
+     background-size: cover; height: 160px;width: 300px; margin-top: -9px;
+}
+#show_more{
+    margin-left: 128px;margin-top:3px; 
+}
+#show_more1{
+     margin-left: 128px;margin-top:3px; 
+}
+
+@media screen and (min-device-width: 200px) and (max-device-width: 798px){
+#service2 {
+    background-image: url(/static/four/images/16.jpg);
+    width: 150px;
+    height: 120px;
+    background-size: cover;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-left: -7px;
+    margin-top: -42px;
+}
+#service3
+{
+    background-image: url({% static 'four/images/background/clean4.jpg' %});
+    width: 252px;
+    height: 122px;
+    background-size: cover;
+    margin-left: -10px;
+    margin-top: -6px;
+    }
+#service4{
+     width: 271px;
+    height: 134px;
+    background-size: cover;
+    padding-top: 0px;
+    margin-top: -20px;
+    margin-left: -10px;
+}
+#shop1{
+        background-size: cover;
+    height: 124px;
+    width: 174px;
+    margin-left: -10px;
+    margin-top: -13px;
+}
+#shop2{
+    background-size: cover;
+    height: 124px;
+    width: 174px;
+    margin-left: -10px;
+    margin-top: -19px;
+}
+#shop3{
+    background-color: #8accff;
+    padding: 5px;
+    background-image: url(/static/four/images/14.jpg);
+    width: 250px;
+    margin-left: 3px;
+}
+#shop4{
+        background-color: #8accff;
+    padding: 5px;
+    margin-top: 10px;
+    background-image: url(/static/four/images/6.jpg);
+    width: 250px;
+    margin-left: 3px;
+}
+#shop5{
+        padding: 20px;
+    margin-left: -113px;
+}
+#shop6{
+        position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 45px;
+}
+#para{
+    font-size: 10px;
+}
+#column1{
+    width: 125%;
+    height: 100%;
+    margin-left: 65px;
+}
+#row1{
+     height: 641px;
+}
+#row2{
+    height: 750px;
+
+}
+#blog1{
+        background-size: cover;
+    height: 130px;
+    width: 217px;
+    margin-top: -9px;
+
+}
+#show_more{
+        margin-left: -25px;
+    margin-top: -7px;
+}
+#show_more1{
+    margin-left: 2px;
+    margin-top: 3px;
+}
+#content{
+    margin-left: 0px;
+}
+#list{
+    margin-left: -23px;
+}
+
+}
+</style>
+
+<!-- Mirrored from asdesignsknr.com/test/bleach/v4/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Dec 2020 09:48:03 GMT -->
+<head>
+<meta charset="utf-8">
+<title>Bleach - kw</title>
+
+<!-- Stylesheets -->
+<link href="{% static 'four/css/bootstrap.css' %}" rel="stylesheet">
+
+<link href="{% static 'four/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'four/css/responsive.css' %}" rel="stylesheet">
+<link href="{% static 'four/css/animate.css' %}" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.5.7/slick-theme.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+
+
+
+
+<!-- Color Themes -->
+<link id="theme-color-file" href="{% static 'four/css/color-themes/default-theme.css' %}" rel="stylesheet">
+
+
+<link rel="stylesheet" href="{% static 'four/css/font-awesome.min.css' %}">
+
+<link href="../../css24585.html?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="{% static 'four/images/favicon.png' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'four/images/favicon.png' %}" type="image/x-icon">
+
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+</head>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'mal' }, 'google_translate_element');
+        }
+
+
+</script>
+<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<body>
+
+<div class="page-wrapper">
+    
+    <!-- Preloader -->
+    <!--<div class="preloader"></div>-->
+    
+    <!-- Main Header -->
+    <header class="main-header header-style-two">
+    
+        <!-- Header Upper -->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="clearfix">
+                    
+                    <div class="pull-left logo-box">
+        <div class="logo"><a href="#"><img src="{% static 'four/images/icons/bleach2.png' %}" alt="" title=""></a></div>
+                    </div>
+
+                    
+                    <div class="pull-right upper-right clearfix">
+                        <div class="nav-outer clearfix">
+                            <!-- Mobile Navigation Toggler -->
+                            <div class="mobile-nav-toggler"><span class="icon flaticon-menu-2"></span></div>
+                            <!-- Main Menu -->
+                            <nav class="main-menu show navbar-expand-md">
+                                <div class="navbar-header">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+<!-- <form>
+<input type="checkbox" id="che">
+</form> -->
+
+
+                                
+                                <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li><a href="/fourhome/">Home</a>
+                                            
+                                        </li>
+
+
+
+
+
+                                
+                                        <li><a href="/aboutusurl/">About us</a>
+                                            
+                                        </li>
+
+
+<li class="dropdown"><a href="#">Services</a>
+                  <!-- <ul class="dropdown-menu mega-dropdown-menu row"> -->
+
+                      <div class="row">
+                        <div class="col-sm-4">
+                      <ul>
+                      
+ <div class="card-image">
+                        <div class="service-block-three" id="service1" >
+                                    <div class="inner-box p-5 parallax sm-background-image-center" id="service2" data-stellar-background-ratio="0.5" style="">
+                                        
+                                        
+                                        <h4><a href="/servicesinglenewurl2/">Upholstery Cleaning </a></h4>
+
+                                        
+                                    </div>
+                                </div>
+                    
+
+                    </div>
+                      </ul>
+                    </div>
+                    <div class="col-sm-4">
+                      <ul>
+                       <div class="card-image">
+                        <div class="service-block-three" >
+                                    <div class="inner-box p-5 parallax sm-background-image-center" data-stellar-background-ratio="0.5" id="service3" style="background-image: url({% static 'four/images/background/clean4.jpg' %});"  >
+                                        
+                                        
+                                        <h4 style="top: -88px;
+    margin-left: 22px;"><a href="/servicesinglenewurl/">General Cleaning</a></h4>
+
+                                        
+                                    </div>
+                                </div>
+                    </div>
+                      </ul>
+
+                      <ul>
+                       <div class="card-image">
+                      
+
+                         <div class="service-block-three" >
+                                    <div class="inner-box p-5 parallax sm-background-image-center" data-stellar-background-ratio="0.5" id="service4" style="background-image: url({% static 'four/images/background/clean1.jpg' %});">
+                                        
+                                        
+                                        <h4 style="top: -2px;
+    margin-left: 22px;"><a href="/servicesinglenewurl4/">Rooms Sanitization</a></h4>
+ 
+                                        
+                                    </div>
+                                </div>
+                    </div>
+                      </ul>
+                    </div>
+                    
+                    
+                    <div class="col-sm-4">
+                      <ul>
+
+
+                    
+                   <!--  <li><h4><span>Category 1</span> <br></h4></li>
+                    <li><h4><span>Category 2</span> <br></h4></li>
+                    <li><h4><span>Category 3</span> <br></h4></li>
+                    <li><h4><span>Category 4</span> <br></h4></li> -->
+
+
+                  
+                  <div class="row">
+        <div class="column" id="column1">
+          <h5>Other Services</h5>
+          <hr>
+          <a href="/servicesinglenewurl1/">Deep Cleaning</a>
+          <a href="/servicesinglenewurl3/">Carpet Cleaning</a>
+           <a href="/servicesinglenewurl5/">Kitchen Service</a>
+        
+        </div>
+ <a href="/servicesnewurl/" class="show-more-button"  id="show_more1">
+    <span class="show-more green">
+        <span class="arrows fa fa-arrow-right" style="padding-top: 17px;">
+            <span class="arrow"></span>
+            <span class="arrow-hidden"></span>
+        </span>
+    </span>
+    <span class="show-more-text"></span>
+</a>
+                    <br>
+
+
+                </ul>
+                
+            </div>
+
+
+
+
+                                    </div>
+                                <!-- </ul> -->
+                  </li>
+
+
+
+
+
+<li class="dropdown"><a href="#">Shop</a>
+
+      <div class="row" id="row1">
+                <!-- <div class="row" style="text-align: center;">jhjhjjhgjjh</div> -->
+        <div class="col-sm-4" id="shop6">
+               <ul>
+                    <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img src="{% static 'four/images/clean7.jpg' %}" class="img-responsive" alt="" id="shop1">
+                            <a href="#">
+                                <div class="mask waves-effect"></div>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="card-content" id="content">
+                        <!-- <li class="dropdown-header">Product</li> -->
+                        <!-- <p style="font-size: 20px;">230/-</p> -->
+
+                        <li class="dropdown-header">detergent</li>
+    <b>KWD 15  </b><strike>KWD 90 </strike><br>
+    <span style="color: green;margin-left: 30px;"> 30% off</span>
+                    </div>
+                   
+                
+           
+               </ul>
+                
+            </div>
+
+      <div class="col-sm-4" id="shop6">
+        <ul>
+                    <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img src="{% static 'four/images/6.jpg' %}" class="img-responsive" alt="" id="shop2">
+                            <a href="#">
+                                <div class="mask waves-effect"></div>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="card-content">
+                        <!-- <li class="dropdown-header">Product</li> -->
+                        <!-- <p style="font-size: 20px;">230/-</p> -->
+
+                        <li class="dropdown-header">detergent</li>
+    <b>KWD 15  </b><strike>KWD 90 </strike><br>
+    <span style="color: green;margin-left: 30px;"> 30% off</span>
+                    </div>
+                   
+                
+           
+               </ul>
+        
+                
+            </div>
+
+            <!-- <div class="vertical"></div> -->
+
+        <div class="col-sm-4" style="background-color: white; height: 290px;padding-right: 7px;padding-left: 0px;">
+          <ul>
+            <div id="shop3">
+                <a href="/newproduct/4"><h5 style="text-align: center; color: white;"><b>Explore more products</b></h5></a>
+                
+            </div>
+                    
+                    
+                </ul>
+
+
+                <ul>
+                    <div id="shop4">
+                <a href="/courselist/1"><h5 style="text-align: center;color: white"><b>Explore more courses</b></h5></a>
+                
+            </div>
+                </ul>
+
+                <ul>
+             
+                    
+                     <div id="shop5" align="center">
+             <!--    <h6 style="text-align: center;">Chemicals</h6>
+                <h6 style="text-align: center;">Equipments</h6>
+                <h6 style="text-align: center;">Gifts</h6> -->
+
+
+ <div class="row">
+        <div class="column" style="width: 125%;
+    height: 100%;
+    ">
+          <h5 style="">Other Products</h5>
+          <hr>
+          <a href="#" style="padding: 8px;"><center>Kids and Gifts</center></a>
+          <a href="#" style="padding: 8px;"><center>Chemicals and Equipments</center></a>
+           
+        
+        </div>
+
+
+
+
+
+                 <!--  <a href="/servicesnewurl/" class="btn btn-primary btn-md waves-effect waves-light" style="background-color: #8accff;">Chemicals</a><br><br>
+                   <a href="/servicesnewurl/" class="btn btn-primary btn-md waves-effect waves-light" style="background-color: #8accff;">Equipments</a><br><br>
+                   <a href="/servicesnewurl/" class="btn btn-primary btn-md waves-effect waves-light" style="background-color: #8accff;">Gifts</a><br><br>
+                   -->
+                
+            </div>
+                </ul>
+            </div>
+
+      <div class="col-sm-3">
+        <ul>
+          
+                    
+                        
+                </ul>
+               
+            </div>
+
+
+
+                                    </div>
+
+                  </li>
+
+
+
+
+
+                                   
+
+    <li class="dropdown mega-dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">Blog <i aria-hidden="true"></i></a>
+
+                  <!-- <ul class="dropdown-menu mega-dropdown-menu row"> -->
+                     
+                        <div class="row" id="row2">
+                            <div class="col-sm-4">
+                        <ul>
+                    <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img src="{% static 'four/images/clean7.jpg' %}" class="img-responsive" alt="" id="blog1">
+                            <a href="#">
+                                <div class="mask waves-effect"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <li class="dropdown-header">Apartment Therapy</li>
+                        <p id="para">Apartment Therapy is a blog focusing on interior design. It was launched by Maxwell Ryan in 2001. Ryan is an interior designer who turned to blogging  </p>
+                    </div>
+                    <!--Buttons-->
+                
+
+                    <!--/.Buttons-->
+                
+                     
+               </ul>
+               
+           </div>
+           <div class="col-sm-4">
+                        <ul>
+                    <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img src="{% static 'four/images/d4.jpg' %}" class="img-responsive" alt="" id="blog1">
+                            <a href="#">
+                                <div class="mask waves-effect"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <li class="dropdown-header">Cleaning</li>
+                        <p id="para">Your business probably makes use<br> of a lot of software tools. House cleaning software that is<br> configured specifically to suit your needs</p>
+                    </div>
+                    <!--Buttons-->
+                    
+                    <!--/.Buttons-->
+                
+                     
+               </ul>
+           </div>
+           <div class="col-sm-4">
+                        <ul>
+                            <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img src="{% static 'four/images/d8.png' %}" class="img-responsive" alt=""  id="blog1">
+                            <a href="#">
+                                <div class="mask waves-effect"></div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <li class="dropdown-header">Cleanin companies</li>
+                        <p id="para">If you want to take your cleaning business to the next level, here’s a marketing idea you may not have considered: cleaning services blogs.cleaning services blogs.</p>
+                    </div>
+                    <!--Buttons-->
+                    
+                    <a href="/blognewurl/" class="show-more-button"   id="show_more">
+    <span class="show-more green">
+        <span class="arrows fa fa-arrow-right" style="padding-top: 17px;">
+            <span class="arrow"></span>
+            <span class="arrow-hidden"></span>
+        </span>
+    </span>
+    <span class="show-more-text"></span>
+</a>
+ 
+
+                       
+                      
+                   
+                   
+                    <!--/.Buttons-->
+                
+                     
+               </ul>
+           </div>
+
+           </div>
+          
+                  <!-- </ul> -->
+
+
+
+               </li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="dropdown"><a href="#">Help</a>
+
+                                            <div class="row">
+                            <div class="col-sm-3">
+                                            <ul>
+
+                                        <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img src="{% static 'four/images/d8.png' %}" class="img-responsive" alt="">
+                            <a href="#">
+                                <div class="mask waves-effect"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <li class="dropdown-header"></li>
+                        <p id="para">5 Ways to Communicate With Your Team That Will Actually Get Results ... calls, questions seem less confrontational </p>
+                    </div>
+                </ul>
+            </div>
+                                        <div class="col-sm-3">
+                                            <ul>
+
+                                        
+                    <div class="card-content">
+                        <li class="dropdown-header">We are here</li>
+                        <p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id amet, quisquam modi  </p>
+                    </div>
+                </ul>
+
+                <ul>
+
+                                        
+                    <div class="card-content">
+                        <li class="dropdown-header">Hey we are!</li>
+                        <p id="para">Meet our team direcly  </p>
+                    </div>
+                </ul>
+            </div>
+
+                                        <div class="col-sm-3">
+                                            <ul>
+
+                                        
+                    <div class="card-content">
+                        <li class="dropdown-header"></li>
+                        <p style="color: blue;" id="para"> CONTENT & SERVICES CUSTOMER SUPPORT
+
+HOW CAN WE HELP YOU?
+ </p>
+                    </div>
+                
+            </div>
+                                        <div class="col-sm-3">
+                                            <ul>
+
+                                        
+                    <div class="card-content">
+                        <li class="dropdown-header" style="font-size: 20px; border-bottom: 1px solid black;">Contact us</li>
+<li id="list"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>customercare@bleach-kw.com</a></li>
+                        <li id="list"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> 1882707</a></li>
+                </ul>
+            </div>
+
+
+
+
+
+
+
+                                    </div>
+                                    </li>
+
+
+
+
+                                     <li><a href="/wishlistproductlist/"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+               <li><a href="/cartlist/"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+               <li class="dropdown">
+                <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i><i aria-hidden="true"></i></a>
+                <ul class="dropdown" role="menu">
+                
+                  <!-- <li><a href="#">edit profile</a></li> -->
+                  {% if request.session.id %}
+                  <li><a href="/userlogout/">logout</a></li>
+                  <li><a href="/viewjobsclt/">career</a></li>
+                  <li><a href="/myprofile/">my profile</a></li>
+
+
+
+
+                  {% else %}
+                  <li><a href="/custlogin/">login</a></li>
+                  <li><a href="/viewjobsclt/">career</a></li>
+
+                  
+                  {% endif %}
+
+                
+                </ul>
+              </li>
+              
+
+
+
+
+
+
+
+
+               
+                                        
+                                        
+
+
+
+                                     </ul>
+                                </div>
+                            </nav>
+                            <!-- Main Menu End-->
+
+                            <!-- Options Box -->
+                            <div class="options-box clearfix">
+
+
+                               <div class="row">
+                                <!-- Phone Box -->
+                                <div class="col-md-9">
+                                    <div class="button-box" style="margin-top: 15px;padding-top: 15px;">
+
+                                        <a href="#" class="theme-btn request-btn" id="book">Book Your Free Evaluation Now</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                          <input type="checkbox" id="che" style="margin-top: 30px;padding-top: 15px;" class="flag_link ar" data-lang="ar">
+                                    
+                                </div>
+                            </div>
+                                <!-- </div>&nbsp&nbsp&nbsp -->
+                                <!-- Button Box -->
+                                <!-- &nbsp&nbsp<label class="switch">
+                                  <input type="checkbox" >
+                                  <span class="slid round" ></span>
+                                </label>&nbsp -->
+
+<!-- <input type="checkbox" id="lol-checkbox">
+
+<label id="button" for="lol-checkbox">
+  <div id="knob"></div>
+  <div id="subscribe"></div>
+  <div id="alright"></div>
+</label> -->
+
+
+
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- End Header Upper -->
+        
+
+
+
+<div id="google_translate_element"></div>
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="#"><img src="{static 'four/images/logo.png' %}" alt="" title=""></a></div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+    
+    </header>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block content %}
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="call-to-action-section style-two">
+        <div class="auto-container">
+            <div class="inner-container">
+                <div class="image">
+                    <img src="{% static 'four/images/resource/call-to-action.jpg' %}" alt="">
+                </div>
+                <div class="content">
+                    <div class="phone-icon flaticon-phone-call"></div>
+                    <h3>Need Our Help or Have Questions?<br> Call Us <a href="tel:1882707">1882707</a></h3>
+                    <div class="text">We utilize technologically advanced machinaries to deliver absolute cleaning space</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Call To Action Section -->
+    
+    <!-- Main Footer -->
+    <footer class="main-footer style-two">
+        <div class="auto-container">
+            <!-- Widgets Section -->
+            <div class="widgets-section">
+                <div class="row clearfix">
+                    
+                    <!-- Big Column -->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+                            
+                            <!--Footer Column-->
+                            <div class="footer-column col-lg-8 col-md-6 col-sm-12" id="foot">
+                                <div class="footer-widget logo-widget">
+                                    <div class="logo" id="logo">
+                                        <a href="#"><img src="{% static 'four/images/logo.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="text">Bleach was established in 2013 for the express purpose of providing professional cleaning services with first class customer care. We at Bleach always strive to meet our customers need for exceptional housecleaning and housekeeping services in their homes, apartments and offices. These services are executed by our own highly trained and qualified Bleach cleaning teams that only use premium quality prod-ucts and equipment..</div>
+                                    <!-- Social Nav -->
+                                    <ul class="social-nav" id="foot">
+                                        <!-- <li class="twitter"><a href="#"><span class="fa fa-twitter"></span></a></li> -->
+                                        <li class="facebook"><a href="https://www.facebook.com/BleachKw/"><span class="fa fa-facebook-f"></span></a></li>
+                                        <!-- <li class="google"><a href="#"><span class="fa fa-google-plus"></span></a></li> -->
+                                        <!-- <li class="pinterest"><a href="#"><span class="fa fa-pinterest-p"></span></a></li> -->
+
+                                        <li class="twitter"><a href="https://www.instagram.com/bleachkw/?hl=en"><span class="fa fa-instagram"></span></a></li>
+
+                                        <li class="google"><a href="https://www.youtube.com/channel/UC_XhgxfirQrft_kAFRZPAOw"><span class="fa fa-youtube"></span></a></li>
+
+                                        <li class="twitter"><a href="https://www.linkedin.com/company/bleachkw"><span class="fa fa-linkedin"></span></a></li>
+                                        
+
+
+                                        
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!--Footer Column-->
+                            <div class="footer-column col-lg-4 col-md-6 col-sm-6">
+                                <div class="footer-widget links-widget" id="foot">
+                                    <h4>Quick Links</h4>
+                                    <ul class="footer-list">
+                                        <li><a href="/fourhome/">Home</a></li>
+                                        <li><a href="/aboutusurl/">About Us</a></li>
+                                        <li><a href="servicesnewurl/">Services</a></li>
+                                        <li><a href="/newproduct/4">Shop </a></li>
+                                        <li><a href="/blognewurl/">Blog</a></li>
+                                        <li><a href="/viewjobsclt/">Career</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                     
+                    
+                    <!-- Big Column -->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+                            
+                            <!-- Footer Column -->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget contact-widget" id="foot">
+                                    <h4>Contact Us</h4>
+                                    <ul>
+                                        <li>
+                                            <span class="icon flaticon-send"></span>
+                                            <strong> Lorem Ipsum is simply dummy text of the printing</strong>
+                                            
+                                        </li>
+                                        <li>
+                                            <span class="icon flaticon-phone-call"></span>
+                                            <strong>Call Today</strong>
+                                            <a href="tel:1882707">1882707</a>
+                                        </li>
+                                        <li>
+                                            <span class="icon flaticon-email-1"></span>
+                                            <strong>Send Email</strong>
+                                            <a href="mailto:customercare@bleach-kw.com">customercare@bleach-kw.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Footer Column -->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12" id="foot">
+                                <div class="footer-widget newsletter-widget">
+                                    <h4>Subscribe</h4>
+                                    <div class="text">Get our newsletter for latest updates about Cleaning.</div>
+                                    <div class="newsletter-form">
+                                        <form method="post" action="#">
+                                            <div class="form-group">
+                                                <input type="email" name="email" value="" placeholder="Your Email" required="">
+                                                <button type="submit" class="theme-btn submit-btn">Subscribe</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="clearfix">
+                    
+                    <div class="pull-left">
+                        <div class="copyright">Copyrights &copy; 2020 All Rights Reserved. Designed by AS Designs.</div>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="footer-nav">
+                            <li><a href="/terms/">Terms & Conditions</a></li>
+                            <!-- <li><a href="#">Privacy Policy</a></li> -->
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</section>
+
+    <!-- End Main Footer -->
+    
+    <!-- Scroll To Top -->
+
+<!-- 
+<div class="float-h">
+        <i class="fa fa-headphones" aria-hidden="true"></i>
+    </div> -->
+    <div class="scroll-to-tops scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+    
+</div>
+<!--End pagewrapper-->
+
+<!-- Header Search -->
+<!-- <div class="search-popup">
+    <button class="close-search style-two"><span class="flaticon-multiply"></span></button>
+    <button class="close-search"><span class="flaticon-multiply"></span></button>
+    <form method="post" action="blog.html">
+        <div class="form-group">
+            <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    </form>
+</div> -->
+<!-- End Header Search -->
+
+<!-- Color Palate / Color Switcher -->
+<!-- <div class="color-palate">
+    <div class="color-trigger">
+        <i class="fa fa-gear"></i>
+    </div>
+    <div class="color-palate-head">
+        <h6>Choose Your Color</h6>
+    </div>
+    
+    <div class="various-color clearfix">
+        <div class="colors-list">
+            <span class="palate default-color active" data-theme-file="css/color-themes/default-theme.css"></span>
+            <span class="palate green-color" data-theme-file="css/color-themes/green-theme.css"></span>
+            <span class="palate olive-color" data-theme-file="css/color-themes/olive-theme.css"></span>
+            <span class="palate orange-color" data-theme-file="css/color-themes/orange-theme.css"></span>
+            <span class="palate purple-color" data-theme-file="css/color-themes/purple-theme.css"></span>
+            <span class="palate teal-color" data-theme-file="css/color-themes/teal-theme.css"></span>
+            <span class="palate brown-color" data-theme-file="css/color-themes/brown-theme.css"></span>
+            <span class="palate redd-color" data-theme-file="css/color-themes/redd-color.css"></span>
+        </div>
+    </div>
+    <a href="#" class="purchase-btn">Purchase now $17</a>
+    <div class="palate-foo">
+        <span>You will find much more options for colors and styling in admin panel. This color picker is used only for demonstation purposes.</span>
+    </div>
+</div>
+ -->
+<!-- Scroll To Top -->
+<div class="scroll-to-tops scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+
+<script src="{% static 'four/js/popper.min.js' %}"></script>
+<script src="{% static 'four/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'four/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'four/js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'four/js/tilt.jquery.min.js' %}"></script>
+<script src="{% static 'four/js/appear.js' %}"></script>
+<script src="{% static 'four/js/nav-tool.js' %}"></script>
+<script src="{% static 'four/js/mixitup.js' %}"></script>
+<script src="{% static 'four/js/owl.js' %}"></script>
+<script src="{% static 'four/js/wow.js' %}"></script>
+<script src="{% static 'four/js/isotope.js' %}"></script>
+<script src="{% static 'four/js/jquery-ui.js' %}"></script>
+<script src="{% static 'four/js/script.js' %}"></script>
+<script src="{% static 'four/js/color-settings.js' %}"></script>
+<script src="{% static 'four/jss/jss.js' %}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+     $("#che").click(function () {
+            if ($(this).is(":checked")) {
+              
+
+            } else {
+              location.reload();
+            }
+        });
+});
+</script>
+
+
+<script type="text/javascript">
+  
+
+
+  var flags = document.getElementsByClassName('flag_link'); 
+
+
+  
+Array.prototype.forEach.call(flags, function(e){
+  e.addEventListener('click', function(){
+    var lang = e.getAttribute('data-lang'); 
+    var languageSelect = document.querySelector("select.goog-te-combo");
+
+
+    languageSelect.value = lang; 
+    languageSelect.dispatchEvent(new Event("change"));
+
+
+
+  }); 
+});
+</script>

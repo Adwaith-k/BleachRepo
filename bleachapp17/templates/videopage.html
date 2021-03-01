@@ -1,0 +1,126 @@
+{% extends 'headerfooter.html' %}
+
+{% block content %}
+{% load static %}
+    <div class="amg-floating-contacts wwww">
+
+
+      <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1-555-555-5555">(555) 555-5555</a>
+        </div>
+      </div>
+     <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+         <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1-555-555-5555">(555) 555-5555</a>
+        </div>
+      </div>
+	  
+	    <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="mailto:mail@mail.com">mail@mail.com</a>
+        </div>
+      </div>
+	  
+	  
+	  
+	   
+	  
+	  
+    </div>
+    <section class="page-title-two">
+		<div class="layer-one" style="background-image: url({% static 'five/images/icons/covid-1.png' %})"></div>
+		<div class="layer-two" style="background-image: url({% static 'five/images/icons/covid-2.png' %})"></div>
+		<div class="layer-three" style="background-image: url({% static 'five/images/background/pattern-18.png' %})"></div>
+    	<div class="auto-container">
+			<ul class="page-breadcrumb">
+				
+			</ul>
+			<h1></h1>
+        </div>
+    </section>
+        <!-- End Header Lower -->
+        
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a class="logo" href="index.html">
+						<span class="icon-disinfection"></span>
+						<span class="title">
+							Sanifica
+							<i>Disinfecting Services</i>
+						</span>
+					</a></div>
+                <div class="menu-outer">
+					<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+				</div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+    
+    </header>
+    <!-- End Main Header -->
+	
+    <!--Page Title-->
+    
+    <!--End Page Title-->
+	
+	<!-- Sidebar Page Container -->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix" style="margin-right: 35px; margin-left: 35px;">
+				
+			
+{% for i in ob %}
+			<div class="video-boxed">
+				<figure class="video-image">
+					<img src="{% static 'four/images/video.png' %}" alt="" style="height: 530px; width: 1150px;">
+				</figure>
+				<a href="{{i.video_name}}" class="lightbox-image overlay-box"><span class="flaticon-play-arrow"><i class="ripple"></i></span></a>
+			</div>
+
+
+
+			<!-- <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image overlay-box"><span class="icon flaticon-play-button"><i class="ripple"></i></span></a>
+ -->
+
+ <!-- <video src="{{i.video_name}}" height="200" width="400" controls> </video> -->
+{% endfor %}
+								
+					
+					
+					
+					<!-- Comment Form -->
+	<section class="service-section-two style-two">
+		<div class="layer-one" style="background-image: url({% static 'five/images/background/pattern-4.png' %})"></div>
+		<div class="layer-three" style="background-image: url({% static 'five/images/background/pattern-6.png' %})"></div>
+		<div class="auto-container">
+			<div class="inner-container">
+				<div class="layer-two" style="background-image: url({% static 'five/images/background/pattern-5.png' %})"></div>
+				
+				<div class="row clearfix">
+					
+
+
+</div>
+					
+		
+					
+				</div>
+			</div>
+		<!-- </div> -->
+	</section>
+	
+	{% endblock %}
+					

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+ /* =============================================================================
+   Responsive Table CSS
+   ========================================================================== */
+
+.dataTable {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.dataTable thead, .dataTable tbody, .dataTable thead tr, .dataTable th {
+  display: block;
+}
+
+.dataTable thead {
+  float: left;
+}
+
+.dataTable tbody {
+  width: auto;
+  position: relative;
+  overflow-x: auto;
+}
+
+.dataTable td, .dataTable th {
+  padding: .625em;
+  line-height: 1.5em;
+  border-bottom: 1px dashed #ccc;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.dataTable th {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.14);
+  border-bottom: 1px dashed #aaa;
+}
+
+.dataTable tbody tr {
+  display: table-cell;
+}
+
+.dataTable tbody td {
+  display: block;
+}
+
+.dataTable tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+@media screen and (min-width: 50em) {
+
+  .dataTable {
+    display: table;
+  }
+  
+  .dataTable thead {
+    display: table-header-group;
+    float: none;
+  }
+  
+  .dataTable tbody {
+    display: table-row-group;
+  }
+  
+  .dataTable thead tr, .dataTable tbody tr {
+    display: table-row;
+  }
+  
+  .dataTable th, .dataTable tbody td {
+    display: table-cell;
+  }
+  
+  .dataTable td, .dataTable th {
+    width: auto;
+  }
+  
+}
+ </style>
+</head>
+<body>
+
+<table class="dataTable">
+    <thead>
+        <tr>
+            <th>JOB_ID</th>
+            <th>COMPANY</th>
+            <th>JOBTITLE</th>
+            <th>DESCRIPTION</th>
+            <th>JOBTYPE</th>
+            <!-- <th>TIMESTSMP</th> -->
+            <th>UPDATED</th>
+
+
+            <th>RESUME</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+      {% for i in ob %}
+        <tr>
+             <td>{{i.id}}</td>
+            <td>{{i.company}}</td>
+            <td>{{i.jobtitle}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.jobtype}}</td>
+
+
+            <!-- <td>{{i.timestamp}}</td> -->
+            <td>{{i.last_updated}}</td>
+            <form action="/applyjob/?jbid={{i.id}}" method="post" enctype="multipart/form-data">
+
+
+                                   {% csrf_token %}
+                                    <td><div class="form-group row">
+                                            <label class="col-form-label col-md-3 col-sm-3 ">UPLOAD RESUME</label>
+                                            <div class="col-md-9 col-sm-9 ">
+
+                                            <input id="inputText9" type="file" class="form-control" name="notesfile">
+                                                <span class="" aria-hidden="true"></span>
+
+
+                                            </div>
+                                        </div>
+                                      </td>
+               <td><button type="submit" class="p-2 mb-2 bg-primary text-white" style="background-color: lightblue;">
+                                                    APPLY</button><br></td>
+                                                </form>
+
+
+                                                <!-- <td><a class="p-2 mb-2 bg-primary text-white" href="/applyjob/?jbid={{i.id}}">Apply</a><br></td> -->
+                                                
+
+                                            </tr>
+
+                                        {% endfor %}
+        
+        
+    </tbody>
+</table>
+
+<div class="container">  
+   
+    <footer role="contentinfo">   
+       
+    </footer>
+</div>
+<script>
+var smallBreak = 800; // Your small screen breakpoint in pixels
+var columns = $('.dataTable tr').length;
+var rows = $('.dataTable th').length;
+
+$(document).ready(shapeTable());
+$(window).resize(function() {
+    shapeTable();
+});
+
+function shapeTable() {
+    if ($(window).width() < smallBreak) {
+        for (i=0;i < rows; i++) {
+            var maxHeight = $('.dataTable th:nth-child(' + i + ')').outerHeight();
+            for (j=0; j < columns; j++) {
+                if ($('.dataTable tr:nth-child(' + j + ') td:nth-child(' + i + ')').outerHeight() > maxHeight) {
+                    maxHeight = $('.dataTable tr:nth-child(' + j + ') td:nth-child(' + i + ')').outerHeight();
+                }
+                if ($('.dataTable tr:nth-child(' + j + ') td:nth-child(' + i + ')').prop('scrollHeight') > $('.dataTable tr:nth-child(' + j + ') td:nth-child(' + i + ')').outerHeight()) {
+                    maxHeight = $('.dataTable tr:nth-child(' + j + ') td:nth-child(' + i + ')').prop('scrollHeight');
+                }
+            }
+            for (j=0; j < columns; j++) {
+                $('.dataTable tr:nth-child(' + j + ') td:nth-child(' + i + ')').css('height',maxHeight);
+                $('.dataTable th:nth-child(' + i + ')').css('height',maxHeight);
+            }
+        }
+    } else {
+        $('.dataTable td, .dataTable th').removeAttr('style');
+    }
+}
+</script>
+</body>
+
+</html>

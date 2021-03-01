@@ -1,0 +1,124 @@
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/flaticon.eot");
+  src: url("../fonts/flaticond41d.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/flaticon.woff") format("woff"),
+       url("../fonts/flaticon.ttf") format("truetype"),
+       url("../fonts/flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+ 	font-family: Flaticon;
+	font-style: normal;
+}
+
+.flaticon-straight-quotes:before { content: "\f100"; }
+.flaticon-blocks-with-angled-cuts:before { content: "\f101"; }
+.flaticon-home-page:before { content: "\f102"; }
+.flaticon-media-play-symbol:before { content: "\f103"; }
+.flaticon-play-arrow:before { content: "\f104"; }
+.flaticon-arrow-pointing-to-right:before { content: "\f105"; }
+.flaticon-big-envelope:before { content: "\f106"; }
+.flaticon-big-anchor:before { content: "\f107"; }
+.flaticon-erlenmeyer-flask:before { content: "\f108"; }
+.flaticon-plus-symbol:before { content: "\f109"; }
+.flaticon-right-arrow:before { content: "\f10a"; }
+.flaticon-left-arrow:before { content: "\f10b"; }
+.flaticon-email:before { content: "\f10c"; }
+.flaticon-magnifying-glass:before { content: "\f10d"; }
+.flaticon-user:before { content: "\f10e"; }
+.flaticon-money-bag:before { content: "\f10f"; }
+.flaticon-garbage:before { content: "\f110"; }
+.flaticon-placeholder:before { content: "\f111"; }
+.flaticon-settings:before { content: "\f112"; }
+.flaticon-share:before { content: "\f113"; }
+.flaticon-headphones:before { content: "\f114"; }
+.flaticon-phone-call:before { content: "\f115"; }
+.flaticon-shopping-cart:before { content: "\f116"; }
+.flaticon-menu:before { content: "\f117"; }
+.flaticon-multiply:before { content: "\f118"; }
+.flaticon-unlink:before { content: "\f119"; }
+.flaticon-left-quote:before { content: "\f11a"; }
+.flaticon-paper-plane:before { content: "\f11b"; }
+.flaticon-pdf:before { content: "\f11c"; }
+.flaticon-edit:before { content: "\f11d"; }
+.flaticon-message:before { content: "\f11e"; }
+.flaticon-down-arrow:before { content: "\f11f"; }
+.flaticon-tick:before { content: "\f120"; }
+.flaticon-maps-and-flags:before { content: "\f121"; }
+.flaticon-tick-1:before { content: "\f122"; }
+.flaticon-user-1:before { content: "\f123"; }
+.flaticon-call:before { content: "\f124"; }
+.flaticon-search:before { content: "\f125"; }
+.flaticon-call-1:before { content: "\f126"; }
+.flaticon-left-arrow-1:before { content: "\f127"; }
+.flaticon-right-arrow-1:before { content: "\f128"; }
+.flaticon-email-1:before { content: "\f129"; }
+.flaticon-email-2:before { content: "\f12a"; }
+.flaticon-email-3:before { content: "\f12b"; }
+.flaticon-menu-1:before { content: "\f12c"; }
+.flaticon-full-screen:before { content: "\f12d"; }
+.flaticon-play-button:before { content: "\f12e"; }
+.flaticon-placeholder-1:before { content: "\f12f"; }
+.flaticon-checked:before { content: "\f130"; }
+.flaticon-play:before { content: "\f131"; }
+.flaticon-user-2:before { content: "\f132"; }
+.flaticon-loupe:before { content: "\f133"; }
+.flaticon-send:before { content: "\f134"; }
+.flaticon-plus:before { content: "\f135"; }
+.flaticon-hospital:before { content: "\f136"; }
+.flaticon-time:before { content: "\f137"; }
+.flaticon-check:before { content: "\f138"; }
+.flaticon-cancel:before { content: "\f139"; }
+.flaticon-telephone:before { content: "\f13a"; }
+.flaticon-gmo:before { content: "\f13b"; }
+.flaticon-microscope:before { content: "\f13c"; }
+.flaticon-smartphone:before { content: "\f13d"; }
+.flaticon-doctor:before { content: "\f13e"; }
+.flaticon-call-2:before { content: "\f13f"; }
+.flaticon-call-3:before { content: "\f140"; }
+.flaticon-play-button-1:before { content: "\f141"; }
+.flaticon-trophy:before { content: "\f142"; }
+.flaticon-shopping-cart-1:before { content: "\f143"; }
+.flaticon-timetable:before { content: "\f144"; }
+.flaticon-grid:before { content: "\f145"; }
+.flaticon-comment:before { content: "\f146"; }
+.flaticon-check-1:before { content: "\f147"; }
+.flaticon-close:before { content: "\f148"; }
+.flaticon-menu-2:before { content: "\f149"; }
+.flaticon-quote:before { content: "\f14a"; }
+.flaticon-quote-1:before { content: "\f14b"; }
+.flaticon-chat-bubble:before { content: "\f14c"; }
+.flaticon-safe:before { content: "\f14d"; }
+.flaticon-down-arrow-1:before { content: "\f14e"; }
+.flaticon-brain:before { content: "\f14f"; }
+.flaticon-virus:before { content: "\f150"; }
+.flaticon-check-2:before { content: "\f151"; }
+.flaticon-alcohol-gel:before { content: "\f152"; }
+.flaticon-coronavirus:before { content: "\f153"; }
+.flaticon-virus-1:before { content: "\f154"; }
+.flaticon-play-1:before { content: "\f155"; }
+.flaticon-facemask:before { content: "\f156"; }
+.flaticon-cough:before { content: "\f157"; }
+.flaticon-fever:before { content: "\f158"; }
+.flaticon-face:before { content: "\f159"; }
+.flaticon-dna:before { content: "\f15a"; }
+.flaticon-bacteria:before { content: "\f15b"; }
+.flaticon-coronavirus-1:before { content: "\f15c"; }
+.flaticon-spray:before { content: "\f15d"; }
+.flaticon-medical-insurance:before { content: "\f15e"; }
+.flaticon-dna-1:before { content: "\f15f"; }
+.flaticon-protection:before { content: "\f160"; }
+.flaticon-trash:before { content: "\f161"; }
+.flaticon-microscope-1:before { content: "\f162"; }

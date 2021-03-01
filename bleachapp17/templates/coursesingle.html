@@ -1,0 +1,242 @@
+
+{% extends 'header.html' %}
+
+{% block content %}
+
+
+{% load static %}
+<style type="text/css">
+  #book{
+          padding: 10px 16px;
+    }
+     #foot{
+      margin-top: 60px;
+    }
+@media screen and (min-device-width: 250px) and (max-device-width: 500px){
+
+     
+    #videosrc{
+          margin-left: -64%;
+          width: 33%;
+    }
+  }
+</style>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+  <!-- Favicon -->
+  <link href="{% static 'four/images/icons/logo-icon.png' %}" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Bleach | KW </title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="{% static 'asset/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'single/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'single/css/responsive.css' %}" rel="stylesheet">
+  <link href="{% static 'single/css/mega.menu.css' %}" rel="stylesheet">
+  <link href="{% static 'single/css/thumbnail.slider.css' %}" rel="stylesheet">
+  <link href="{% static 'single/css/datepicker.css' %}" rel="stylesheet">
+  <link href="{% static 'single/css/bootstrap-select.css' %}" rel="stylesheet">
+  
+
+
+  <!-- Owl Carousel for this template-->
+  <link rel="stylesheet" href="{% static 'asset/assets/owlcarousel/assets/owl.carousel.min.css' %}"> 
+  
+    <!-- Fontawesome styles for this template-->
+    <!-- <link href="{% static 'asset/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css"> -->
+  
+</head>
+
+  <!--header end--> 
+  <!--title-bar start-->
+  
+  <!--title-bar end-->  
+  <!--meal-detail-start-->
+  <section class="all-partners">      
+  <div class="container-fluid ">
+      
+      <div class="row">         
+        <div class="col-lg-8 col-md-8">
+
+          <div id="sync1" class="owl-carousel owl-theme">
+            <div class="item">
+             <video src="{{ob2.video_name}}" height="650" width="600" id="videosrc" controls> </video>
+              
+            </div>
+         
+                      
+          </div>
+         
+
+
+          
+          <!-- <div class="resto-meal-dt">
+            <div class="resto-detail">
+              
+              <div class="name-location">
+                <a href="restaurant_detail.html"><h1>product</h1></a>
+                
+              </div>
+            </div>
+            <div class="right-side-btns">
+              <div class="bagde-dt">
+                                      
+              </div>
+             
+            </div>
+          </div> -->
+          
+          <div class="all-tabs">
+            
+                    
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-4 col-md-4">
+          <div class="name-location" style="padding-bottom: 30px;">
+                <a href="restaurant_detail.html"><h1>{{ob.course_name}}</h1></a>
+                
+              </div>
+          <div class="right-side">
+            
+                    
+            <div class="price">
+              <span>{{ob.course_price}}</span>
+
+            </div>
+            <div class="dt-detail">
+              <ul>
+                
+                <li>
+                </li>
+              </ul>
+            </div>
+            <div class="Extra-option">
+              <h4> Description - <ins></ins></h4>
+              <div class="non-veg">
+                <ul class="food-bootom">
+                  <li>
+                    <p class="food-left">
+                     {{ob.description}}
+                    </p>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </li>
+                </ul>
+              </div>
+              
+            </div><br>
+
+
+             <div class="Extra-option">
+              <h4> Review - <ins></ins></h4>
+              <div class="non-veg">
+                <ul class="food-bootom">
+                  <li>
+                    <p class="food-left">
+                     {{ob.review}}
+                    </p>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </li>
+                </ul>
+              </div>
+              
+            </div><br>
+
+<label>Level -&nbsp</label><b>{{ob.level}}</b>
+
+            
+           
+
+
+
+
+
+
+            <div class="total-cost">
+              <div class="total-text">
+                <h5>Total</h5>
+              </div>
+              <div class="total-price">
+                <p>{{ob.course_price}}</p>
+                <!-- <input type="text" name="" value="{{ob.id}}"> -->
+              </div>
+            </div>
+            <div class="order-now-check">
+              <!-- <a href="/addtocarturl/?faid={{ob.id}}"><button class="on-btn btn-link" onclick="">ADD TO CART</button></a> -->
+
+               <a href="/addtocarturl/?faid={{ob.id}}&&num=1"><button class="on-btn btn-link" onclick="">ADD TO CART</button></a>
+              
+
+
+
+            </div>
+          </div>
+            
+        </div>
+      </div>      
+    </div>
+  </section>      
+  <!--meal-deail end-->
+  <!--footer start-->
+  
+  <!--footer end--> 
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'asset/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'asset/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'asset/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+   <!-- Assect scripts for this page-->
+  <script src="{% static 'asset/assets/owlcarousel/owl.carousel.js' %}"></script>
+  <script src="{% static 'asset/js/custom.js' %}"></script>
+  <script src="{% static 'asset/js/thumbnail.slider.js' %}"></script>
+  <script src="{% static 'asset/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'asset/js/bootstrap-select.js' %}"></script>
+  <script>
+  $(document).ready(function(){
+    $('#qty_input').prop('disabled', true);
+    $('#plus-btn').click(function(){
+      $('#qty_input').val(parseInt($('#qty_input').val()) + 1 );
+          });
+        $('#minus-btn').click(function(){
+      $('#qty_input').val(parseInt($('#qty_input').val()) - 1 );
+      if ($('#qty_input').val() == 0) {
+      $('#qty_input').val(1);
+    }
+
+    });
+  });
+  </script>
+
+  </body>
+
+
+{% endblock %}

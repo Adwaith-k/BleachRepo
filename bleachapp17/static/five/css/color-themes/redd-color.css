@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+a,
+.theme_color,
+.icon-disinfection,
+.logo .icon-disinfection,
+.list-style-three li:before,
+.sec-title.style-two .title:before,
+.about-section .content-column .title:before,
+.environmental-section .content-column .title:before,
+.sanitizer-section .content-column .title:before,
+.price-block .inner-box .price,
+.main-menu .navigation > li > ul > li:hover > a,
+.main-menu .navigation > li > ul > li > ul > li:hover > a,
+.product-block .inner-box .icon-outer .icon,
+.main-header .options-box .phone-box .icon,
+.service-block-three .inner-box .icon-outer .icon,
+.main-footer.style-two .contact-widget ul li .icon,
+.main-footer.style-two .logo-widget .social-nav li a,
+.mission-block .inner-box .icon-outer .icon,
+.gallery-block .inner-box .image .overlay-box .content h4 a:hover,
+.call-to-action-section .inner-container .content .phone-icon,
+.main-footer.style-two .logo-widget .logo span.icon-disinfection{
+	color:#FF4136;
+}
+
+.call-to-action-section .inner-container .content .phone-icon .icon svg path,
+.service-block-three .inner-box .icon-outer .icon svg path,
+.header-style-two .options-box .phone-box .icon svg path,
+.mission-block .inner-box .icon-outer .icon svg path,
+.product-block .inner-box .icon-outer .icon svg path {
+	stroke: #FF4136;
+}
+
+/* Background Color */
+
+.btn-style-two:before,
+.main-header .header-top,
+.btn-style-one:before,
+.btn-style-three,
+.broucher-box,
+.btn-style-four:before,
+.service-block .inner-box:before,
+.service-block .inner-box h3:before,
+.product-block .inner-box:before,
+.accordion-box .block .acc-btn.active,
+.news-block .inner-box .image .post-date,
+.service-block-two .inner-box:before,
+.faq-form .form-group .skill-bar .bar-inner,
+.service-block-three .inner-box:before,
+.pricing-tabs .tab-buttons .boll .round,
+.project-page-section .filters li:before,
+.call-to-action-section.style-three .inner-container,
+.news-block-two .inner-box .image .overlay-box .icon,
+.blog-detail .inner-box .lower-content blockquote,
+.contact-box .inner-box:before,
+.gallery-block .inner-box .image .overlay-box .search-icon:hover{
+	background-color:#FF4136;
+}
+
+/* Border Color */
+.btn-style-two:hover,
+.price-block .inner-box .start-btn,
+.faq-form .form-group .skill-bar .bar-inner .bar,
+.faq-form .form-group input[type="text"]:focus,
+.faq-form .form-group input[type="tel"]:focus,
+.faq-form .form-group input[type="email"]:focus,
+.faq-form .form-group textarea:focus,
+.skills .skill-item .skill-bar .bar-inner .bar,
+.faq-form-two .form-group input[type="text"]:focus,
+.faq-form-two .form-group input[type="tel"]:focus,
+.faq-form-two .form-group input[type="email"]:focus,
+.faq-form-two .form-group textarea:focus{
+	border-color:#FF4136;
+}
+
+.list-style-two li:before{
+	filter: grayscale(100%);
+}

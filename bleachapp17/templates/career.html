@@ -1,0 +1,304 @@
+
+{% extends 'header.html' %}
+
+{% block content %}
+{% load static %}
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+  <title>Custom Bootstrap 4 card</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+
+<style>
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    font-size: 14px;
+    margin-top: 90px;
+    color: #666666;
+    font-family: "Open Sans";
+  }
+.card-custom {
+  overflow: hidden;
+  min-height: 400px;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+
+.card-custom-img {
+  height: 200px;
+  min-height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-color: inherit;
+}
+
+/* First border-left-width setting is a fallback */
+.card-custom-img::after {
+  position: absolute;
+  content: '';
+  top: 161px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-top-width: 40px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 545px;
+  border-left-width: calc(575px - 5vw);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: inherit;
+}
+
+.card-custom-avatar img {
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  position: absolute;
+  top: 100px;
+  left: 1.25rem;
+  width: 100px;
+  height: 100px;
+}
+
+</style>
+
+<div class="slider-in">
+    <div class="amg-floating-contacts wwww">
+
+
+      <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1882707">1882707</a>
+        </div>
+      </div>
+     <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+         <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1882707">1882707</a>
+        </div>
+      </div>
+      
+        <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone" style="font-size: 10px">
+          <a class="amg-nav-item" href="mailto:customercare@bleach-kw.com">customercare@bleach-kw.com</a>
+        </div>
+      </div>
+      
+      
+      
+       
+      
+      
+    </div>
+
+    <div class="slider stick-dots">
+  
+  
+  <div class="slider stick-dots">
+  
+  
+  
+  
+  
+    <div class="slide">
+      <div class="slide__img">
+        <img src="" alt="" data-lazy="" class="full-image animated" data-animation-in="zoomInImage"/>
+      </div>
+      <div class="slide__content">
+        <div class="slide__content--headings">
+           
+           
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide__img">
+        <img src="" alt="" data-lazy="" class="full-image animated" data-animation-in="zoomInImage"/>
+      </div>
+      <div class="slide__content">
+        <div class="slide__content--headings">
+           
+          
+           
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    
+  </div>
+    </div>
+
+
+<body>
+
+  <div class="container">
+    <div class="row pt-5 m-auto">
+      
+{% for i in ob %}
+
+
+     <!--  -->
+
+      <div class="col-md-6 col-lg-4 pb-3">
+
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 400px">
+          <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="{% static 'four/images/job.png' %}" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">{{i.jobtitle}}</h4>
+        
+            <!-- <p class="card-text">{{i.description}}</p> -->
+            <p class="card-text"></p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <!-- <a href="#" class="btn btn-primary">Option</a> -->
+           <form action="/applyjob/?jbid={{i.id}}" method="post" enctype="multipart/form-data">
+
+
+                                   {% csrf_token %}
+                                    <td><div class="form-group row">
+                                            <label class="col-form-label col-md-3 col-sm-3 "></label>
+                                            <div class="col-md-9 col-sm-9 ">
+
+                                            <input id="inputText9" type="file" class="form-control" name="notesfile">
+                                                <span class="" aria-hidden="true"></span>
+                                                
+
+
+                                            </div>
+                                        </div>
+                                      </td>
+               <td><button type="submit" class="p-2 mb-2 bg-primary text-white" style="background-color: #00000024; margin-left: 100px;">
+                                                    <b>APPLY HERE</b></button><br></td>
+                    
+
+                                                </form>
+
+
+
+          </div>
+          <a data-id="{{i.description}}" data-toggle="modal" class="open-AddBookDialog btn btn-primary" href="#addBookDialog">Read More</a>
+        </div>
+
+      </div>
+      {% endfor %}
+
+
+
+      
+
+      <!-- <div class="col-md-6 col-lg-4 pb-3">
+
+        <div class="card card-custom bg-white border-white border-0">
+          <div class="card-body">
+            <img src="http://res.cloudinary.com/d3/image/upload/c_scale,h_450,q_auto:best/color-cards_lorvwg.jpg" alt="Colored cards" class="img-fluid">
+            <p>You can use this card together with standard Bootstrap 4 cards and use card features on it.</p>
+            <p class="h5 text-center pt-3">See the card on GitHub:</p>
+            <p class="h1 text-center"><a href="https://github.com/peterdanis/custom-bootstrap-cards" target="_blank"><i class="fa fa-github"></i></a></p>
+
+          </div>
+        </div>
+
+      </div> -->
+    </div>
+  </div>
+
+<!-- <div class="modal hide" id="addBookDialog">
+ <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3>Modal header</h3>
+  </div>
+    <div class="modal-body">
+        <p>some content</p>
+        <textarea name="bookId" id="bookId" rows="100" cols="50"></textarea>
+    </div>
+</div> -->
+
+
+
+<div id="addBookDialog" class="modal fade" role="dialog" >
+    <!-- modal-dialog -->
+    <div class="modal-dialog">
+        <!-- modal-content -->    
+        <div class="modal-content">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <center style="padding-left: 10px;margin-right: 180px;">JOB DESCRIPTION</center>
+            </div>
+            <!-- end modal-header -->
+            <!-- modal-body -->
+            <div class="modal-body">
+                <p>Career Job Description</p>
+                <textarea name="bookId" id="bookId" rows="20" cols="70" readonly></textarea>
+            </div>
+            <!-- end modal-body -->
+            <!-- modal-footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+            </div>
+            <!-- end modal-footer -->
+        </div>
+    <!-- end modal-content -->
+    </div>
+    <!-- end modal-dialog -->
+</div>
+</body>
+<script src="../static/four/js/jquery.js"></script>
+<script src="../static/four/js/popper.min.js"></script>
+<script src="../static/four/js/bootstrap.min.js"></script>
+<script src="../static/four/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../static/../static/four/js/jquery.fancybox.js"></script>
+<script src="../static/four/js/tilt.jquery.min.js"></script>
+<script src="../static/four/js/appear.js"></script>
+<script src="../static/four/js/nav-tool.js"></script>
+<script src="../static/four/js/mixitup.js"></script>
+<script src="../static/four/js/owl.js"></script>
+<script src="../static/four/js/wow.js"></script>
+<script src="../static/four/js/isotope.js"></script>
+<script src="../static/four/js/jquery-ui.js"></script>
+<script src="../static/four/js/script.js"></script>
+<script src="../static/four/js/color-settings.js"></script>
+<script src="../static/four/jss/jss.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+<script type="text/javascript">
+  
+
+  $(document).on("click", ".open-AddBookDialog", function () {
+     var myBookId = $(this).data('id');
+     $(".modal-body #bookId").val( myBookId );
+    $('#addBookDialog').modal('show');
+});
+
+    
+</script>
+
+{% endblock %}

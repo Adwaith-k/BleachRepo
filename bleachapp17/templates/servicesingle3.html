@@ -1,0 +1,807 @@
+{% extends 'headerfooter.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<style type="text/css">
+    @media only screen and (max-width: 767px){
+    .service-detail .inner-box .image img {
+    position: relative;
+    width: 50%;
+    display: block;
+    margin-left: 31px;
+}
+
+.service-detail .inner-box .lower-content p {
+
+    width: 356px;
+}
+.service-detail .inner-box .lower-content .image-gallery img {
+    width: 63%;
+    margin-left: 25px;
+}
+.service-detail .inner-box .lower-content .list-style-three {
+    margin-bottom: 20px;
+    margin-left: -21px;
+}
+#service_form{
+    margin-left: -28px;
+    margin-right: 29px;
+
+}
+.sidebar-page-container {
+    position: relative;
+    padding: 0px 0px 80px
+}
+.faq-form .form-group input[type="text"], .faq-form .form-group input[type="tel"], .faq-form .form-group input[type="email"], .faq-form .form-group input[type="password"], .faq-form .form-group select {
+
+
+    height: 40px;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(3.25rem + 2px);
+    }
+}
+</style>
+    <!-- End Main Header -->
+     <div class="slider-in">
+    <div class="amg-floating-contacts wwww">
+
+
+      <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1882707">1882707</a>
+        </div>
+      </div>
+     <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+         <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1882707">1882707</a>
+        </div>
+      </div>
+      
+        <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone" style="font-size: 10px">
+          <a class="amg-nav-item" href="mailto:customercare@bleach-kw.com">customercare@bleach-kw.com</a>
+        </div>
+      </div>
+      
+      
+      
+       
+      
+      
+    </div>
+
+    <div class="slider stick-dots">
+  
+  
+  <div class="slider stick-dots">
+  
+  
+  
+  
+  
+    <div class="slide">
+      <div class="slide__img">
+        <img src="" alt="" data-lazy="" class="full-image animated" data-animation-in="zoomInImage"/>
+      </div>
+      <div class="slide__content">
+        <div class="slide__content--headings">
+           
+           
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide__img">
+        <img src="" alt="" data-lazy="" class="full-image animated" data-animation-in="zoomInImage"/>
+      </div>
+      <div class="slide__content">
+        <div class="slide__content--headings">
+           
+          
+           
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    
+  </div>
+    </div>
+    
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url({% static 'four/images/background/pattern-.png' %})">
+        <div class="auto-container"><br><br>
+            <h1 style="color: black;">Service Details</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="/fourhome/"  style="color: black;">home</a></li>
+                <small>services</small>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- <section class="page-title" style="background-image:url({% static 'five/images/background/7.jpg' %})">
+        <div class="auto-container">
+            <h1>Latest News</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">home</a></li>
+                <li>Read Our Blog</li>
+                <li>Full Post</li>
+            </ul>
+        </div>
+    </section>  -->
+    <!--End Page Title-->
+    
+    <!-- Sidebar Page Container -->
+    <body>
+    <div class="sidebar-page-container" style="background-image: url({% static 'four/images/background/pattern-8.png' %}">
+        <div class="auto-container">
+            <div class="row clearfix">
+                
+                <!-- Content Side -->
+                <!-- <div class="content-side col-lg-8 col-md-12 col-sm-12"> -->
+                    <div class="service-detail">
+                        <div class="inner-box">
+                            {% for i in ob2 %}
+
+                            <div class="image">
+                                <img src="{{i.photo}}" alt="" />
+                            </div>
+                            <div class="lower-content">
+                                <h3>{{i.service_name}}<span>{{i.query}}</span></h3><br>
+                                <p>
+
+</p>
+                                <p>{{i.description}} </p>
+                                <div class="image-gallery">
+                                    <div class="row clearfix">
+                                        {% for i in ob3 %}
+                                        <div class="column col-lg-6 col-md-6 col-sm-12">
+                                            <img src="{{i.video_name}}" alt="" />
+                                        </div>
+                                        {% endfor %}
+                                        <div class="column col-lg-6 col-md-6 col-sm-12">
+                                            <img src="" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>We Make Your Area Clinically Safe & Clean</h4>
+                                <p>{{i.notes}}</p>
+                                <h3>category : {{i.category}}</h3>
+
+                                <ul class="list-style-three">
+                                   <li>{{i.feature1}}</li>
+                                    <li>{{i.feature2}}</li>
+                                    <li>{{i.feature3}}</li>
+                                    <li>{{i.feature4}}</li>
+                                </ul>
+                                
+                                <!-- <h4>Covid-19 Frequently Asked Questions</h4> -->
+                                
+                                <ul class="accordion-box style-two">
+                                    
+                                    <!-- <li class="accordion block active-block">
+                                        <div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fas fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>Is this spray / product safe around food?</div>
+                                        <div class="acc-content current">
+                                            <div class="content">
+                                                <div class="accordian-text">Tempor incididunt ut labore et dolore magna aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exa duis aute irure dolor in reprehenderit.</div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    
+                                    <!-- <li class="accordion block">
+                                        <div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fas fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>How long will this service last?</div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="accordian-text">Tempor incididunt ut labore et dolore magna aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exa duis aute irure dolor in reprehenderit.</div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    
+                                    <!-- Block -->
+                                    <!-- <li class="accordion block">
+                                        <div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fas fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>How you disinfect Covid-19?</div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="accordian-text">Tempor incididunt ut labore et dolore magna aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exa duis aute irure dolor in reprehenderit.</div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    
+                                </ul>
+                            <input type="hidden" name="" value="{{i.id}}">
+
+                                
+                            </div>
+
+
+                            <div class="inner-container">
+                
+                <!-- Faq's Form -->
+                <div class="faq-form">
+                    
+                    <!-- Contact Form -->
+                    <form action="/insertservicepage/" id="service_form"  data-area-url="{% url 'ajax_load_area' %}" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                        <div class="row clearfix" style="margin-right: 30px; margin-left: 30px;">
+                        
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="radio" name="gender" value="male" placeholder="Company" style="height: 25px;width: 25px;" required>&nbsp MALE &nbsp&nbsp
+                                <input type="radio" name="gender" value="female" placeholder="Company" style="height: 25px;width: 25px;" required>&nbsp FEMALE
+
+                            </div>
+                            
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                            
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="phone_number" placeholder="Phone" pattern="[0-9]{8}" title="please enter 8 digit phone number" required>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <select class="form-group" id="preferred_communication" name="preferred_communication">
+                                    <option>PREFERRED COMMUNICATION</option>
+                                                <option value="Email">Email</option>
+                                                <option value="Whatsapp">Whatsapp</option>
+                                                <option value="Sms">Sms</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <select  class="form-control" id="country" name="nationality">
+                                    <option >Nationality</option>
+
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Åland Islands">Åland Islands</option>
+                <option value="Albania">Albania</option>
+                <option value="Algeria">Algeria</option>
+                <option value="American Samoa">American Samoa</option>
+                <option value="Andorra">Andorra</option>
+                <option value="Angola">Angola</option>
+                <option value="Anguilla">Anguilla</option>
+                <option value="Antarctica">Antarctica</option>
+                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Aruba">Aruba</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Azerbaijan">Azerbaijan</option>
+                <option value="Bahamas">Bahamas</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Barbados">Barbados</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Belize">Belize</option>
+                <option value="Benin">Benin</option>
+                <option value="Bermuda">Bermuda</option>
+                <option value="Bhutan">Bhutan</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Bouvet Island">Bouvet Island</option>
+                <option value="Brazil">Brazil</option>
+                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Burundi">Burundi</option>
+                <option value="Cambodia">Cambodia</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Canada">Canada</option>
+                <option value="Cape Verde">Cape Verde</option>
+                <option value="Cayman Islands">Cayman Islands</option>
+                <option value="Central African Republic">Central African Republic</option>
+                <option value="Chad">Chad</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Christmas Island">Christmas Island</option>
+                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Comoros">Comoros</option>
+                <option value="Congo">Congo</option>
+                <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                <option value="Cook Islands">Cook Islands</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Cote D'ivoire">Cote D'ivoire</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Cyprus">Cyprus</option>
+                <option value="Czech Republic">Czech Republic</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Djibouti">Djibouti</option>
+                <option value="Dominica">Dominica</option>
+                <option value="Dominican Republic">Dominican Republic</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Egypt">Egypt</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                <option value="Eritrea">Eritrea</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                <option value="Faroe Islands">Faroe Islands</option>
+                <option value="Fiji">Fiji</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="French Guiana">French Guiana</option>
+                <option value="French Polynesia">French Polynesia</option>
+                <option value="French Southern Territories">French Southern Territories</option>
+                <option value="Gabon">Gabon</option>
+                <option value="Gambia">Gambia</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Germany">Germany</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Gibraltar">Gibraltar</option>
+                <option value="Greece">Greece</option>
+                <option value="Greenland">Greenland</option>
+                <option value="Grenada">Grenada</option>
+                <option value="Guadeloupe">Guadeloupe</option>
+                <option value="Guam">Guam</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Guernsey">Guernsey</option>
+                <option value="Guinea">Guinea</option>
+                <option value="Guinea-bissau">Guinea-bissau</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Haiti">Haiti</option>
+                <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Hong Kong">Hong Kong</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                <option value="Iraq">Iraq</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Isle of Man">Isle of Man</option>
+                <option value="Israel">Israel</option>
+                <option value="Italy">Italy</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="Jersey">Jersey</option>
+                <option value="Jordan">Jordan</option>
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Kiribati">Kiribati</option>
+                <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                <option value="Korea, Republic of">Korea, Republic of</option>
+                <option value="Kuwait" selected="">Kuwait</option>
+                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Lebanon">Lebanon</option>
+                <option value="Lesotho">Lesotho</option>
+                <option value="Liberia">Liberia</option>
+                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                <option value="Liechtenstein">Liechtenstein</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Macao">Macao</option>
+                <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                <option value="Madagascar">Madagascar</option>
+                <option value="Malawi">Malawi</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Maldives">Maldives</option>
+                <option value="Mali">Mali</option>
+                <option value="Malta">Malta</option>
+                <option value="Marshall Islands">Marshall Islands</option>
+                <option value="Martinique">Martinique</option>
+                <option value="Mauritania">Mauritania</option>
+                <option value="Mauritius">Mauritius</option>
+                <option value="Mayotte">Mayotte</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                <option value="Moldova, Republic of">Moldova, Republic of</option>
+                <option value="Monaco">Monaco</option>
+                <option value="Mongolia">Mongolia</option>
+                <option value="Montenegro">Montenegro</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Mozambique">Mozambique</option>
+                <option value="Myanmar">Myanmar</option>
+                <option value="Namibia">Namibia</option>
+                <option value="Nauru">Nauru</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Netherlands Antilles">Netherlands Antilles</option>
+                <option value="New Caledonia">New Caledonia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Niger">Niger</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Niue">Niue</option>
+                <option value="Norfolk Island">Norfolk Island</option>
+                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                <option value="Norway">Norway</option>
+                <option value="Oman">Oman</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Palau">Palau</option>
+                <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                <option value="Panama">Panama</option>
+                <option value="Papua New Guinea">Papua New Guinea</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Pitcairn">Pitcairn</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Puerto Rico">Puerto Rico</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Reunion">Reunion</option>
+                <option value="Romania">Romania</option>
+                <option value="Russian Federation">Russian Federation</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Saint Helena">Saint Helena</option>
+                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                <option value="Saint Lucia">Saint Lucia</option>
+                <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                <option value="Samoa">Samoa</option>
+                <option value="San Marino">San Marino</option>
+                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Senegal">Senegal</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Seychelles">Seychelles</option>
+                <option value="Sierra Leone">Sierra Leone</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="Solomon Islands">Solomon Islands</option>
+                <option value="Somalia">Somalia</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                <option value="Spain">Spain</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Sudan">Sudan</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                <option value="Swaziland">Swaziland</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+                <option value="Tajikistan">Tajikistan</option>
+                <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Timor-leste">Timor-leste</option>
+                <option value="Togo">Togo</option>
+                <option value="Tokelau">Tokelau</option>
+                <option value="Tonga">Tonga</option>
+                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                <option value="Tunisia">Tunisia</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Turkmenistan">Turkmenistan</option>
+                <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                <option value="Tuvalu">Tuvalu</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+                <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Uzbekistan">Uzbekistan</option>
+                <option value="Vanuatu">Vanuatu</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Viet Nam">Viet Nam</option>
+                <option value="Virgin Islands, British">Virgin Islands, British</option>
+                <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                <option value="Wallis and Futuna">Wallis and Futuna</option>
+                <option value="Western Sahara">Western Sahara</option>
+                <option value="Yemen">Yemen</option>
+                <option value="Zambia">Zambia</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+                </select>
+                                         
+                                </select>
+                            </div>
+
+            
+
+
+
+
+
+
+
+
+
+                            
+                            
+                            
+                            
+                            
+                        
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="civil_id" placeholder="Civil ID" required>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="tel" name="other_mobile" placeholder="Other Mobile" required>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <select id="message_language" name="message_language" class="form-group">
+                                    <option>MESSAGE LANGUAGE</option>
+                                    <option value="english">English</option>
+                                    <option value="arabic">Arabic</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="apartment" placeholder="Apartment" required>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="floor" placeholder="Floor" required>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="building" placeholder="Building" required>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="street" placeholder="Street" required>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="avenue" placeholder="Avenue" required>
+                            </div>
+
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <select id="governarateid" name="governerate" class="form-group">
+                                    <option>GOVERNERATE</option>
+                                                {% for f in ob %}
+                                                    <option value="{{f.id}}">{{f.Governerate_name}}</option>
+                                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <select name="Area" class="form-group" id="id_area">
+                                                <option>Select</option>
+                                                {% for f in ob1 %}
+                                                    <option value="{{f.id}}">{{f.Area_name}}</option>
+                                                    {% endfor %}
+
+                                                   
+
+
+                                          </select>
+                            </div>
+
+                                
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                             
+                            <input class="date-picker form-control" name="date" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
+                                                <script>
+                                                    function timeFunctionLong(input) {
+                                                        setTimeout(function() {
+                                                            input.type = 'text';
+                                                        }, 60000);
+                                                    }
+                                                </script>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <select id="evaluationtimeslot" name="evaluationtimeslot" class="form-group">
+                                    <option value="08:00 AM to 09:00 AM">08:00 AM to 09:00 AM</option>
+                                                <option value="09:00 AM to 10:00 AM">09:00 AM to 10:00 AM</option>
+                                                <option value=" 10:00 AM to 11:00 AM"> 10:00 AM to 11:00 AM</option>
+                                                    <option value="11:00 AM to 12:00 PM">11:00 AM to 12:00 PM</option>
+                                                    <option value="12:00 PM to 01:00 PM">12:00 PM to 01:00 PM</option>
+                                                    <option value="01:00 PM to 02:00 PM">01:00 PM to 02:00 PM</option>
+
+                                                    <option value="02:00 PM to 03:00 PM">02:00 PM to 03:00 PM</option>
+                                                    <option value="03:00 PM to 04:00 PM">03:00 PM to 04:00 PM</option>
+                                                    <option value="04:00 PM to 05:00 PM">04:00 PM to 05:00 PM</option>
+                                                    <option value="05:00 PM to 06:00 PM">05:00 PM to 06:00 PM</option>
+                                </select>
+                            </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <select id="customer_type"  name="customer_type" class="form-group" onchange="copp()">
+                                    <option>CUSTOMER TYPE</option>
+                                                <option value="Individual">Individual</option>
+                                                <option value="Retail">Retail</option>
+                                                <option value="Corporate">Corporate</option>
+                                </select>
+                            </div>
+
+                            
+
+                            <div id="demo" class="col-md-12 col-sm-12"></div>
+
+<script>
+                                        function copp() {
+
+                                        var x = document.getElementById("customer_type").value;
+                                        if(x=="Corporate"){
+                                        <!--    alert(x);-->
+
+                                            var label1 = document.createElement("label");
+                                            label1.setAttribute("class", "col-form-label col-md-3 col-sm-3");
+                                            document.getElementById("demo").appendChild(label1).innerHTML
+                = 'Company Name';
+
+                                        var element = document.createElement("input");
+
+                                        element.setAttribute("type", "text");
+
+                                        element.setAttribute("name", "company");
+
+                                        element.setAttribute("class", "form-control");
+
+
+
+
+
+                                        document.getElementById("demo").appendChild(element);
+
+
+
+                                             var label2 = document.createElement("label");
+                                            label2.setAttribute("class", "col-form-label col-md-3 col-sm-3");
+                                            document.getElementById("demo").appendChild(label2).innerHTML
+                = 'Job Title';
+
+                                        var element = document.createElement("input");
+                                        var element = document.createElement("INPUT");
+                                        element.setAttribute("type", "text");
+                                        element.setAttribute("name", "job_title");
+                                        element.setAttribute("class", "form-control");
+
+                                        document.getElementById("demo").appendChild(element);
+                                        var mybr = document.createElement('br');
+                                            document.getElementById("demo").appendChild(mybr);
+
+
+                                            }
+                                        else{
+                                        document.getElementById("demo").innerHTML = "";
+                                        <!--       document.getElementById("demo").remove();-->
+
+                                             }
+
+                                             };
+
+
+</script>
+                            <input type="text" name="hiddenid" value="{{i.id}}">
+
+                            
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+                                <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">Submit </span></button>
+                            </div>
+                            
+                        </div>
+                    </form>
+                    
+                    <!--End Contact Form -->
+                </div>
+                
+            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+                            {% endfor %}
+
+                
+                <!-- Sidebar Side -->
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                    <aside class="sidebar sticky-top">
+                        
+                        <!-- category -->
+                        <!-- <div class="sidebar-widget category-widget">
+                            <div class="widget-content">
+                                <div class="sidebar-title">
+                                    <h5>What We Offers</h5>
+                                </div>
+
+                                <ul class="cat-list">
+                                    <li><a href="#">Microbial Barrier</a></li>
+                                    <li><a href="#">Covid-19 Cleaning</a></li>
+                                    <li><a href="#">Commercial Services</a></li>
+                                    <li><a href="#">Roof Repairing</a></li>
+                                    <li><a href="#">Architecture Consulting</a></li>
+                                    <li><a href="#">Interior Design Package</a></li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        
+                        <!-- Brochures Widget -->
+                        <div class="sidebar-widget brochures-widget">
+                            
+                            <!-- Broucher Box -->
+                            <!-- <div class="broucher-box">
+                                <a href="#" class="overlay-link"></a>
+                                <div class="broucher-inner">
+                                    <span class="file-icon">
+                                        <span class="icon-disinfection"></span>
+                                    </span>
+                                    Download Brochure
+                                </div>
+                            </div>
+                             -->
+                            <!-- Broucher Box -->
+                            <!-- <div class="broucher-box">
+                                <a href="#" class="overlay-link"></a>
+                                <div class="broucher-inner">
+                                    <span class="file-icon">
+                                        <span class="icon-disinfection"></span>
+                                    </span>
+                                    About Sanifica Services
+                                </div>
+                            </div> -->
+                            
+                        </div>
+                        
+                        <!-- category -->
+                        
+                        
+                        <!-- Faq's Video Widget -->
+                        
+                        <!-- End Faq's Video Widget -->
+                        
+                    </aside>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        
+    </footer>
+<script src="{% static '/vendors/jquery/dist/jquery.min.js' %}"></script>
+    
+     <script>
+    $("#governarateid").change(function () {
+
+      var url = $("#service_form").attr("data-area-url");  // get the url of the `load_cities` view
+      var gId = $(this).val();  // get the selected country ID from the HTML input
+
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'gId': gId,       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_area").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+    });
+  </script>
+
+
+<!-- <script>
+    alert('{{ message }}');
+</script> -->
+
+
+
+</body>
+
+    
+    <!-- Call To Action Section Two -->
+    {% endblock %}
+   

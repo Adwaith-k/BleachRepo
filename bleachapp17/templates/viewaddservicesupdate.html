@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title>Bleach KW! | </title>
+
+    <!-- Bootstrap -->
+    <link href="{% static '/vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static '/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static '/vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{% static '/vendors/iCheck/skins/flat/green.css' %}" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="{% static '/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{% static '/vendors/jqvmap/dist/jqvmap.min.css' %}" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="{% static '/vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{% static '/build/css/custom.min.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+
+
+
+                {% include "paw.html" %}
+
+              {% include "avatar.html" %}
+
+
+
+
+
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            {% if request.session.aid %}
+{% include "sidebar.html" %}
+{% else %}
+{% include "subsidebar.html" %}
+{% endif %}
+            <!-- /sidebar menu -->
+          </div>
+        </div>
+
+
+
+        <!-- top navigation -->
+        {% include "navbar.html" %}
+
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+
+ <div class="card">
+                            <h5 class="card-header">Update Service</h5>
+                            <div class="card-body">
+                                <form action="/viewaddservicesupdateinsert/{{ob.id}}" method="post"
+                                      enctype="multipart/form-data">
+                                    {% csrf_token %}
+
+
+                                   <!--  <div class="form-group">
+                                        <label for="inputText4" class="col-form-label">service_name</label>
+                                        <input id="inputText4" type="text" class="form-control" name="service_name"
+                                               value={{ob.service_name}}>
+                                    </div> -->
+
+                                      <div class="form-group">
+                            <label for="inputText7" class="col-form-label">service_name </label>
+                <input type="textarea" class="form-control" name="service_name" value="{{ob.service_name}}">
+                        </div>
+                                    <br>
+
+                                    <img src="{{ob.photo}}" height="200" width="400">
+
+                                    <div class="form-group">
+                                        <label for="inputText6" class="col-form-label">photo</label>
+                                        <input id="inputText6" type="file" class="form-control" name="photo">
+                                    </div>
+                                     <h2>Other</h2>
+                                        {% for i in vid%}
+
+                                            <img src="{{i.video_name}}" height="200" width="400" controls>
+
+                                        {% endfor %}
+
+
+                                           <div id="images" class="form-group">
+
+                                                <label for="inputText9" class="col-form-label">videos</label>
+
+                                                <input id="inputText9" type="file" class="form-control" name="file[]">
+                                            </div>
+
+                                            <input type="button" name="add_videos" id="add_image" value="Add Video">
+                         <div class="form-group">
+                            <label for="inputText4" class="col-form-label">Query</label>
+                            <input id="inputText4" type="text" class="form-control" name="query" value="{{ob.query}}">
+                        </div>
+
+                       <!--  <div class="form-group">
+                            <label for="inputText7" class="col-form-label">extra notes</label>
+                <textarea id="inputText7" rows="5" cols="8" type="text" class="form-control" name="notes" value={{ob.notes}}></textarea>
+                        </div> -->
+                         <div class="form-group">
+                            <label for="inputText7" class="col-form-label">extra notes </label>
+                <input type="textarea" class="form-control" name="notes" value="{{ob.notes}}">
+                        </div>
+
+
+                         <div class="form-group">
+                            <label for="inputText4" class="col-form-label">category</label>
+                            <input id="inputText4" type="category" class="form-control" name="cat_name" value="{{ob.category}}">
+                        </div>
+
+<!-- 
+                                    <div class="form-group">
+                                        <label for="inputText7" class="col-form-label">Description</label>
+                                         <textarea id="inputText7"  rows="5" cols="8"  class="form-control" name="description"
+                                               value={{ob.description}}></textarea>
+
+                                               <textarea id="inputText7" rows="5" cols="6" class="form-control" name="description" value={{ob.description}}>
+                                    </div> -->
+
+                                    <div class="form-group">
+                            <label for="inputText7" class="col-form-label">Descreption </label>
+                <input type="textarea" class="form-control" name="description" value="{{ob.description}}">
+                        </div>
+
+                                    <div class="form-group">
+                                        <label for="inputText8" class="col-form-label">service_price</label>
+                                        <input id="inputText8" type="number" class="form-control" name="service_price"
+                                               value={{ob.service_price}}>
+                                    </div>
+
+
+                                    <!--                                            <div class="form-group">-->
+                                    <!--                                                <label for="inputText8" class="col-form-label">status</label>-->
+                                    <!--                                                <input id="inputText8" type="text" class="form-control" name="status" value={{ob.status}}>-->
+                                    <!--                                            </div>-->
+                                    <!-- <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">status</label>
+                                        <div class="col-12 col-sm-8 col-lg-6 pt-1">
+                                            <div class="switch-button switch-button-success">
+                                                {% if ob.status %} <input type="checkbox" value="False" name="status"
+                                                                          checked=""
+                                                                          id="switch16"><span> {% else %}  <input
+                                                    type="checkbox" value="True" name="status" id="switch16"><span>  {% endif %}
+
+                                                    <label for="switch16"></label></span>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <input type="submit" value="Submit">
+                                </form>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+
+    <!-- jQuery -->
+    <script src="{% static '/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static '/vendors/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static '/vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static '/vendors/nprogress/nprogress.js' %}"></script>
+    <!-- Chart.js -->
+    <script src="{% static '/vendors/Chart.js/dist/Chart.min.js' %}"></script>
+    <!-- gauge.js -->
+    <script src="{% static '/vendors/gauge.js/dist/gauge.min.js' %}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{% static '/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+    <!-- iCheck -->
+    <script src="{% static '/vendors/iCheck/icheck.min.js' %}"></script>
+    <!-- Skycons -->
+    <script src="{% static '/vendors/skycons/skycons.js' %}"></script>
+    <!-- Flot -->
+    <script src="{% static '/vendors/Flot/jquery.flot.js' %}"></script>
+    <script src="{% static '/vendors/Flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static '/vendors/Flot/jquery.flot.time.js' %}"></script>
+    <script src="{% static '/vendors/Flot/jquery.flot.stack.js' %}"></script>
+    <script src="{% static '/vendors/Flot/jquery.flot.resize.js' %}"></script>
+    <!-- Flot plugins -->
+    <script src="{% static '/vendors/flot.orderbars/js/jquery.flot.orderBars.js' %}"></script>
+    <script src="{% static '/vendors/flot-spline/js/jquery.flot.spline.min.js' %}"></script>
+    <script src="{% static '/vendors/flot.curvedlines/curvedLines.js' %}"></script>
+    <!-- DateJS -->
+    <script src="{% static '/vendors/DateJS/build/date.js' %}"></script>
+    <!-- JQVMap -->
+    <script src="{% static '/vendors/jqvmap/dist/jquery.vmap.js' %}"></script>
+    <script src="{% static '/vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
+    <script src="{% static '/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{% static '/vendors/moment/min/moment.min.js"></script>
+    <script src="{% static '/vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static '/build/js/custom.min.js' %}"></script>
+
+  </body>
+</html>

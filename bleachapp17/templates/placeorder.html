@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Favicon -->
+    <link href="asset/images/fav.png" rel="shortcut icon" type="image/x-icon">
+
+    <title> Checkout </title>
+
+    <!-- Bootstrap core CSS-->
+   
+
+
+
+    
+
+
+    <link type="text/css" href="asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="asset/css/style.css" rel="stylesheet">
+    <link type="text/css" href="asset/css/responsive.css" rel="stylesheet">
+    <link type="text/css" href="asset/css/mega.menu.css" rel="stylesheet">
+    <link type="text/css" href="asset/css/thumbnail.slider.css" rel="stylesheet">
+    <link type="text/css" href="asset/css/datepicker.css" rel="stylesheet">
+    <link type="text/css" href="asset/css/bootstrap-select.css" rel="stylesheet">
+
+    <!-- Owl Carousel for this template-->
+    <link rel="stylesheet" href="assets/assets/owlcarousel/assets/owl.carousel.min.css">
+    
+    <!-- Fontawesome styles for this template-->
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRcJehCMao0sjQ0UzkcQhHgTBVCJnKh0c&callback=initMap&libraries=&v=weekly"
+            defer
+    ></script>
+</head>
+
+<body oncontextmenu="return false;">
+    <!--header start-->
+
+    <!--header end-->       
+    <!--title-bar start-->
+    <section class="title-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left-title-text">
+                    <h3>Checkout</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-title-text">  
+                        <ul>
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--title-bar end-->    
+    <!--partners start-->
+
+
+
+
+    <section class="all-partners">          
+        <div class="container">     
+            <div class="row">                   
+                <div class="col-lg-8 col-md-8">
+
+                    <?php if(validation_errors()){
+
+                    ?>
+                    <center>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <?php echo validation_errors(); ?>
+
+                        </div>
+                    </center>
+                    <?php }?>
+
+                    <?php if(isset($delete_cart_status)){?>
+                        <?php if($delete_cart_status==500)
+                        {?>
+                            <div class="alert alert-danger" role="alert">
+
+                                <?=$delete_cart_message;?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php   }
+                        else
+                        {
+                            ?>
+                            <div class="alert alert-success" role="alert">
+
+                                <?=$delete_cart_message;?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                        <?php }?>
+
+                    <?php }?>
+
+                    <div class="my-checkout">
+                        <div class="table-responsive">
+                            <table class="table  table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td class="td-heading">Meal</td>
+                                        <td class="td-heading">Qty</td>
+                                        <td class="td-heading">Price</td>
+                                        <td class="td-heading">Action</td>                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $total=0;
+                                foreach ($Cart_data as $Cart_data) {
+
+                                    $total=$total+$Cart_data->price;
+                                ?>
+                                    <tr>
+
+                                        <td>
+                                            <div class="checkout-thumb">
+                                                <a href="meal_detail.html">
+                                                    <img src="http://asproducts.online/corsaa/uploads/menus/<?=$Cart_data->image?>" class="img-responsive" alt="thumb" title="thumb">
+                                                </a>
+                                            </div>
+                                             <div class="name">
+                                                <a href="meal_detail.html"><h4><?=$Cart_data->product_name?></h4></a>
+<!--                                                <a href="restaurant_detail.html"><p>Restaurant Name</p></a>-->
+
+                                            </div>
+                                        </td>                                   
+                                        <td class="td-content"><?=$Cart_data->quantity?></td>
+                                        <td class="td-content"><?=$Cart_data->price?></td>
+                                        <td><a href="checkout/deleteCartProduct?cart_id=<?=$Cart_data->cart_id?>" class="remove-btn">Remove</a></td>
+                                    </tr>
+                                <?php }?>
+
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4">
+                                            <h3 class="text-right">Total <ins id="Beforepromoamount"><?=$total?></ins></h3>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="map">                       
+<!--                        <iframe src="../maps/embed-1.html?pb=!1m18!1m12!1m3!1d6848.588137286094!2d75.8069355495411!3d30.878433570394723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a822f25912599%3A0xa51f780d31824240!2sShaheed+Bhagat+Singh+Nagar%2C+Ludhiana%2C+Punjab!5e0!3m2!1sen!2sin!4v1556363627043!5m2!1sen!2sin" style="border:0" allowfullscreen=""></iframe>-->
+
+                        <div id="map" style="height: 300px"></div>
+
+                        <div class="map-location-tooltip">
+                            <div class="tooltip tooltip-main">
+                                <span class="tooltip-item"></span>
+                                <span class="tooltip-content">Food Location</span>
+                            </div>
+                            <div class="tooltip tooltip-main">
+                                <span class="tooltip-item"></span>
+                                <span class="tooltip-content">Your Location</span>
+                            </div>
+                        </div>                      
+                    </div>
+                    <div class="yf-location">
+                        <ul>
+                            <li><span><i class="fas fa-map-marker-alt"></i></span><ins>Your location</ins></li>                             
+                            <li class="circles">
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                   
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                               
+                                <i class="fas fa-circle"></i>                                                   
+                                <i class="fas fa-circle"></i>                                               
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                       
+                                <i class="fas fa-circle"></i>                                       
+                                <i class="fas fa-circle"></i>                                               
+                                <i class="fas fa-circle"></i>                                               
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                       
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                       
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>
+                                <i class="fas fa-circle"></i>                                                           
+                                <i class="fas fa-circle"></i>                                                                                                                                                                                                                                                       
+                                <i class="fas fa-circle"></i>                                                                                                                                                                                                                                                       
+                                <i class="fas fa-circle"></i>                                                                                                                                                                                                                                                       
+                                <i class="fas fa-circle"></i>                                                                                                                                                                                                                                                                                           
+                                <i class="fas fa-circle"></i>                                                                                                                                                                                                                                                                                           
+                            </li>                               
+                            <li><span><i class="fas fa-map-marker-alt"></i></span><ins>Food location</ins></li>                             
+                        </ul>
+                    </div>
+                    <div class="food-delivery-time">
+                        <p>We will Deliver in 35 min <p>
+                    </p></div>
+                    <div class="checkout-details">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="about-checkout">
+                                    <img src="assets/images/checkout/icon-1.svg" alt="">
+                                    <h4>Your Information is Safe</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis at metus vitae porta.</p>
+                                </div>                          
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-checkout">
+                                    <img src="assets/images/checkout/icon-2.svg" alt="">
+                                    <h4>Secure Checkout</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis at metus vitae porta.</p>
+                                </div>                          
+                            </div>
+                        </div>
+                    </div>
+                    <div class="note">
+                        <p><span>Note :</span>Order cancel in 5 minutes. Ut iaculis at metus vitae porta.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">                 
+                    <div class="right-address">
+                        <h4>Address</h4>
+                        <form>
+                            <div class="form-group">
+                                <input type="address" class="video-form" id="addressInput" placeholder="Enter Your Address">
+                            </div>
+                            <div class="form-group">
+                                <select class="selectpicker"  id="selectpicker_state" tabindex="-98">
+                                    <option value="0">State</option>
+                                    <option value="1">Punjab</option>
+                                    <option value="2">Delhi</option>
+                                    <option value="3">Rajasthan</option>
+                                    <option value="4">Bihar</option>
+                                    <option value="5">Mumbai</option>
+                                    <option value="6">Goa</option>
+                                    <option value="7">Banglore</option>
+                                    <option value="8">Utarpardesh</option>
+                                    <option value="9">Jammu & Kashmir</option>
+                                    <option value="10">Himachal</option>                                                                                                                                                                              
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="selectpicker" id="selectpicker_city" tabindex="-98">
+                                    <option value="0">City</option>
+                                    <option value="1">Ludhiana</option>
+                                    <option value="2">Mohali</option>
+                                    <option value="3">Firozpur</option>
+                                    <option value="4">Bathinda</option>
+                                    <option value="5">Patiala</option>
+                                    <option value="6">Moga</option>
+                                    <option value="7">jalandhar</option>
+                                    <option value="8">Amritsar</option>
+                                    <option value="9">Hosharpur</option>
+                                    <option value="10">Khana</option>                                                                                                                                                                             
+                                </select>
+                            </div>  
+                            <div class="form-group">
+                                <input type="text" class="video-form" id="zipInput" placeholder="Zip Code">
+                            </div>                          
+                        </form>
+                    </div>  
+                    <div class="right-payment-method">
+                        <h4>Payment Method</h4>
+                        <div class="single-payment-method">
+                            <div class="payment-method-name">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="cashon" name="paymentmethod" value="cash" class="custom-control-input">
+                                    <label class="custom-control-label" for="cashon">Cash On Delivery</label>
+                                </div>
+                            </div>
+                            <div class="payment-method-details" data-method="cash" style="">
+                                <p>Cash on delivery (COD) available. Card/Net banking acceptance subject to device availability.</p>
+                            </div>
+                        </div>
+                        <div class="single-payment-method">
+                            <div class="payment-method-name">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="directbank" name="paymentmethod" value="bank" class="custom-control-input">
+                                    <label class="custom-control-label" for="directbank">Credit/Debit Card</label>
+                                </div>
+                            </div>
+                            <div class="payment-method-details" data-method="bank">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="cardNumber">Card Details</label>
+                                        <input type="text" class="video-form" id="cardNumber" name="cardNumber" placeholder="Card Number">                                                                              
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="video-form" id="cardHolder" name="cardHolder" placeholder="Holder Name">                                                                              
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-12 pm-right">
+                                            <div class="form-group">
+                                                <select class="selectpicker" id="selectpicker_month" tabindex="-98">
+                                                    <option value="0">Month</option>
+                                                    <option value="1">January</option>
+                                                    <option value="2">February</option>
+                                                    <option value="3">March</option>
+                                                    <option value="4">April</option>
+                                                    <option value="5">May</option>
+                                                    <option value="6">June</option>
+                                                    <option value="7">July</option>
+                                                    <option value="8">August</option>
+                                                    <option value="9">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>                                                                                                                                                                                                                                                                                  
+                                                </select>                                                                           
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12 pm-left pm-right">
+                                            <div class="form-group">
+                                                <select class="selectpicker" id="selectpicker_year" tabindex="-98">
+                                                    <option value="0">Year</option>
+                                                    <option value="1">2019</option>
+                                                    <option value="2">2020</option>
+                                                    <option value="3">2021</option>
+                                                    <option value="4">2022</option>
+                                                    <option value="5">2023</option>
+                                                    <option value="6">2024</option>
+                                                    <option value="7">2025</option>
+                                                    <option value="8">2026</option>
+                                                    <option value="9">2027</option>
+                                                    <option value="10">2028</option>
+                                                    <option value="11">2029</option>
+                                                    <option value="12">2030</option>                                                                                                                                                                                                                                                                                  
+                                                </select>                                                                           
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-12 pm-left">
+                                            <div class="form-group">
+                                                <input type="text" class="video-form" id="cardCvv" name="cardCvv" placeholder="Cvv">                                                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accepted-check">
+                                        <div class="accpet-checkbox">
+                                            <input type="checkbox" id="c101" name="cb">
+                                            <label for="c101">Agree to terms and conditions</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-contact-dt">
+                        <h4>Confirm</h4>
+                        <form>
+                            <div class="form-group">
+                                <div class="input-field">
+                                    <input type="Email" class="confirm-form" id="emailAddress" placeholder="Email Address">                         
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-field">
+                                    <input type="tel" class="confirm-form" id="telNumber" placeholder="Phone Number">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="promocode">
+                        <h4>Promocode</h4>
+
+                            <input class="coupon-input" id="Promocode" type="text" placeholder="Enter promo code">
+                            <div class="subscribe-btn">                         
+                                <div class="s-n-btn">
+                                    <button class="promocode-btn">Apply</button>
+                                </div>
+                            </div>
+
+                    </div>
+
+
+
+                    <img src="assets/images/ZZ5H.gif" style="display: none" id="zz5h" class="mt-2" height="30" width="30">
+
+                    <div class="alert alert-success mt-2" role="alert" id="promo_result"style="display: none">
+
+                        <p id="promo_code_status"></p>
+                    </div>
+
+                    <div class="your-order">
+                        <h4>Your Order</h4>
+<!--                        <div class="order-d">-->
+<!--                            <div class="item-dt-left">-->
+<!--                                <span>Toasty Buns Burgers</span>-->
+<!--                                <p>2 X $11</p>-->
+<!--                            </div>-->
+<!--                            <div class="item-dt-right">-->
+<!--                                <p>$22.00</p>-->
+<!--                            </div>          -->
+<!--                        </div>-->
+                        <div class="order-d">
+                            <div class="item-dt-left">
+                                <span>Item Total</span>
+                            </div>
+                            <div class="item-dt-right">
+                                <span class="form-inline">QR &nbsp<p id="before_promo_total"></p></span>
+                            </div>          
+                        </div>
+                        <div class="order-d">
+                            <div class="item-dt-left">
+                                <span>Promocode <a href="#" id="display_promo"></a></span>
+                            </div>
+                            <div class="item-dt-right">
+                                <span class="form-inline">QR &nbsp<p id="promo_discount"></p></span>
+                            </div>          
+                        </div>
+
+                        <div class="order-d">
+                            <div class="item-dt-left">
+                                <span>Delivery Charges</span>
+                            </div>
+                            <div class="item-dt-right">
+                                <p>Free</p>
+                            </div>          
+                        </div>
+                        <div class="order-d">
+                            <div class="item-dt-left">
+                                <span>Your Saving</span>
+                            </div>
+                            <div class="item-dt-right">
+                                <span class="form-inline">QR &nbsp<p id="saving_promo"></p></span>
+                            </div>          
+                        </div>
+                        <div class="total-bill">
+                            <div class="total-bill-text">
+                                <h5>Total</h5>
+                            </div>
+                            <div class="total-bill-payment">
+                                <p><span class="form-inline">QR &nbsp<p id="after_promo_total"></p></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form method="post" action="">
+                        <input type="hidden" name="user_id" id="user_id" value="<?=$user_id?>">
+                        <input type="hidden" name="Restuarant_id"id="Restuarant_id" value="<?=$Restuarant_id?>">
+                        <input type="hidden" name="Final_amount" id="Final_amount" value="">
+                        <input type="hidden" name="Adrress_final" id="Adrress_final" value="">
+                        <input type="hidden" name="State" id="State" value="">
+                        <input type="hidden" name="city" id="city" value="">
+                        <input type="hidden" name="zip_code" id="zip_code" value="">
+                        <input type="hidden"name="paymet_method" id="paymet_method" value="">
+                        <input type="hidden" name="Email_address" id="Email_address" value="">
+                        <input type="hidden" name="Phone_number" id="Phone_number" value="">
+                        <input type="hidden" name="Lat" id="Lat" value="">
+                        <input type="hidden"name="Lng"  id="Lng" value="">
+
+                    <div class="checkout-btn">
+                        <input type="submit" class="chkout-btn btn-link" name="submit"  value="Checkout Now">
+                    </div>
+
+                    </form>
+
+                </div>              
+            </div>          
+        </div>
+    </section>          
+    <!--partners end-->
+    <!--footer start-->
+
+    <!--footer end-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+     <!-- Assect scripts for this page-->
+    <script src="assets/assets/owlcarousel/owl.carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/thumbnail.slider.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="assets/js/bootstrap-select.js"></script>
+<script>
+    $(document).ready(function()
+    {
+        $("#before_promo_total").html($("#Beforepromoamount").html());
+        $("#after_promo_total").html($("#Beforepromoamount").html());
+        $("#Final_amount").val($("#Beforepromoamount").html());
+
+    });
+    $(".promocode-btn").click(function(){
+
+        var beforePromoTotal=$("#before_promo_total").html();
+        var Promocode =$("#Promocode").val();
+         var Restuarant_id=$("#Restuarant_id").val();
+        var user_id=$("#user_id").val();
+
+        $("#zz5h").show();
+
+        $.ajax({
+            url: "http://asproducts.online/corsaa/api/WebServices/applyPromoCode",
+            method: "POST",
+            data: {promo_code: Promocode,user_id:user_id,vendor_id:Restuarant_id},
+            dataType: "json",
+            success: function (data) {
+                $("#promo_result").show();
+                $("#promo_code_status").html(data.message);
+                var amount=$("#after_promo_total").html();
+
+
+                var discount=data.promoValue;
+                if(discount!=undefined) {
+
+                    $("#display_promo").html(Promocode);
+                    $("#promo_discount").html("-"+discount);
+                    $("#saving_promo").html(discount);
+                    var finalamount = amount - discount;
+                    $("#after_promo_total").html(finalamount);
+                    $("#Final_amount").val(finalamount);
+
+                }
+            },
+
+
+        })
+        $( document ).ajaxComplete(function() {
+            $("#zz5h").hide();
+        });
+
+    });
+</script>
+
+    <script>
+        $(document).ready(function()
+        {
+            $("#addressInput").change(function(){
+
+                $("#Adrress_final").val($("#addressInput").val());
+
+            });
+            $("#selectpicker_state").change(function(){
+                var selectedCountry = $(this).children("option:selected").text();
+                $("#State").val(selectedCountry);
+
+            });
+
+            $("#selectpicker_city").change(function(){
+                var selectedcity = $(this).children("option:selected").text();
+                $("#city").val(selectedcity);
+
+            });
+            $("#zipInput").change(function(){
+
+                $("#zip_code").val($("#zipInput").val());
+
+            });
+
+            $("input[type='radio']").click(function(){
+                var radioValue = $(this).val();;
+
+
+                $("#paymet_method").val(radioValue);
+
+
+            });
+            $("#emailAddress").change(function(){
+
+                $("#Email_address").val($("#emailAddress").val());
+
+            });
+            $("#telNumber").change(function(){
+
+                $("#Phone_number").val($("#telNumber").val());
+
+            });
+
+
+        });
+    </script>
+
+<script>
+    function initMap() {
+        const myLatlng = { lat: -25.363, lng: 131.044 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 7,
+            center: myLatlng,
+        });
+        // Create the initial InfoWindow.
+
+
+        // Configure the click listener.
+        map.addListener("click", (mapsMouseEvent) => {
+            // Close the current InfoWindow.
+
+            // Create a new InfoWindow.
+
+            $("#Lng").val(mapsMouseEvent.latLng.lng());
+
+            $("#Lat").val(mapsMouseEvent.latLng.lat());
+
+
+        });
+    }
+
+</script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,330 @@
+
+
+
+{% extends 'header.html' %}
+
+{% block content %}
+{% load static %}
+
+
+
+
+
+
+    <div class="slider-in">
+    <div class="amg-floating-contacts wwww">
+
+
+      <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1882707">1882707</a>
+        </div>
+      </div>
+     <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+         <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1882707">1882707</a>
+        </div>
+      </div>
+      
+        <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="mailto:customercare@bleach-kw.com">customercare@bleach-kw.com</a>
+        </div>
+      </div>
+      
+      
+      
+       
+      
+      
+    </div>
+
+    <div class="slider stick-dots">
+  
+  
+  <div class="slider stick-dots">
+  
+  
+  
+  
+  
+    <div class="slide">
+      <div class="slide__img">
+        <img src="" alt="" data-lazy="" class="full-image animated" data-animation-in="zoomInImage"/>
+      </div>
+      <div class="slide__content">
+        <div class="slide__content--headings">
+           
+           
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide__img">
+        <img src="" alt="" data-lazy="" class="full-image animated" data-animation-in="zoomInImage"/>
+      </div>
+      <div class="slide__content">
+        <div class="slide__content--headings">
+           
+          
+           
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    
+  </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+<section id="services-area" class="pt-150 pb-150">
+    <table class="table">
+
+    <thead class="thead-dark">
+      <tr>
+        <th>Product</th>
+          <th>Item Name</th>
+                        
+            <th>Total</th>
+        </tr>
+        </thead>
+        {% for i in bb %}
+        <tbody>
+        <tr>
+            <td>
+
+        <div class="service-content pt-50">
+            <div class="container-fluid" >
+                
+                <div class="row ">
+                 
+               
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                        <!-- <div class="services-box effect-item mt-40">
+                            <div class="services-item content-overlay"> -->
+                                <a href="/product_detail_view/?id={{x.productid.id}}"><img src="{{i.course_id.photo}} {{i.product_id.image}}" alt=" " width="200" height="200">
+                                <!-- <div class="content-details fadeIn-top">
+                                    <i class="flaticon-male-silhouette-variant-showing-muscles "></i>
+                                    <h3>yoga</h3>
+                                    
+                                </div> -->
+                                </a>
+                            </div>
+                          
+                    
+                </div>
+            </div>
+        </div>
+    </td>
+    
+
+
+<td>
+        <div class="service-content pt-50">
+    <div class="container-fluid">
+               
+    <div class="row ">
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6"><b>
+    {{i.course_id.course_name}} {{i.product_id.product_name}}</b></div></div></div></div>
+    </td>
+
+
+
+    <td>
+        <div class="service-content pt-50">
+    <div class="container-fluid">
+               
+    <div class="row ">
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6"><b>
+      {{i.total}}</b></div>
+      <!-- {{i.course_id.course_price}}  {{i.product_id.product_price}} -->
+    </td>
+
+
+   
+    </tr>
+
+
+
+
+
+
+
+
+
+
+</tbody>
+{% endfor %}
+</table>
+
+
+<script type="text/javascript">
+    // location.reload();
+    // location.reload();
+  function shlocaltotal()
+  {
+    var d=parseFloat(document.getElementById("ld").value);
+    var d1=parseFloat(document.getElementById("subtot").value);
+
+    totalprize=d+d1;
+    
+    document.getElementById("total").innerHTML=totalprize;
+    document.getElementById("subtotal").value=totalprize;
+
+  }
+
+</script>
+
+<script type="text/javascript">
+  function shhometotal()
+  {
+    var d=parseFloat(document.getElementById("hd").value);
+    var d1=parseFloat(document.getElementById("subtot").value);
+
+    totalprize=d+d1;
+    
+    document.getElementById("total").innerHTML=totalprize;
+    document.getElementById("subtotal").value=totalprize;
+  }
+
+</script>
+<form action="/cart_payment/?cid={{i.id}}" method="POST">
+  {% csrf_token %}
+
+  <div class="row">
+<div class="col-md-6">
+                <h2 class="h3 mb-3 text-black font-heading-serif" style="padding-left: 20px;">Shipping</h2>
+                <div class="p-3 p-lg-5 border">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th>Delivery</th>
+                      <th>Total</th>
+                    </thead>
+                    <tbody>
+                      
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Local Delivery:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  .01 </strong></td>
+                        <td class="text-black"><input type="radio" value=.01
+                    id="ld" name="shipping" onclick="shlocaltotal()" required=""></td>
+                      </tr>
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Home Delivery:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp .02 </strong></td>
+                        <td class="text-black"><input type="radio" value=.02
+                    id="hd" name="shipping" onclick="shhometotal()" required=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+    </div>
+  </div>
+
+<div class="col-md-6">
+                <h2 class="h3 mb-3 text-black font-heading-serif">Grand Total</h2>
+                <div class="p-3 p-lg-5 border">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th></th>
+                      <th></th>
+                    </thead>
+                    <tbody>
+                      
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Subtotal&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+                        <td class="text-black"><strong class="text-black" id="subtotal" name="total" >{{sum1}} {{total}}</strong></td>
+                        <input type="text" id="subtot" value="{{sum1}} {{total}}" name="subtotal" hidden="" >
+                      </tr>
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Total&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+                        <td class="text-black"><strong class="text-black" id="total" name="total" ></strong></td>
+                        <input type="text" id="subtotal"  name="subtotall" hidden="">
+                      </tr>
+                    </tbody>
+                  </table>
+  
+                  
+    </div>
+
+  </div>
+  <div class="col-md-12 form-group">
+<div align="center" class="button-container" style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+
+ <input type="submit" class="btn btn-success " value="CONFIRM › " style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #3165bf; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; width: auto; width: auto; border-top: 1px solid #3165bf; border-right: 1px solid #3165bf; border-bottom: 1px solid #3165bf; border-left: 1px solid green; padding-top: 5px; padding-bottom: 5px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;" target="_blank" >
+
+</div>
+</div>
+   <!-- <div class="p-3 p-lg-5 border"> -->
+<!-- <input type="submit" name="" value="buy all" class="btn btn-1">
+
+ -->
+
+   <!-- <div class="col-md-12 form-group">
+                              <div align="center" class="button-container" style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                                <a href="/checkouturl/?cid={{i.id}}" style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #fc7318; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; width: auto; width: auto; border-top: 1px solid #fc7318; border-right: 1px solid #fc7318; border-bottom: 1px solid #fc7318; border-left: 1px solid #fc7318; padding-top: 5px; padding-bottom: 5px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;" target="_blank"><span style="padding-left:20px;padding-right:20px;font-size:18px;display:inline-block;">
+                                                        <span style="font-size: 16px; line-height: 32px;"><span style="font-size: 18px; line-height: 36px;">
+                                                            <strong>CONFIRM › </strong></span></span>
+                                                    </span></a>
+                                            </div>
+
+                            </div> -->
+
+                             <div class="col-md-12 form-group">
+                              <div align="center" class="button-container">
+                                                <a href="/cancelurl/{{i.id}}" style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #ffffff; background-color: #3165bf; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; width: auto; width: auto; border-top: 1px solid #3165bf; border-right: 1px solid #3165bf; border-bottom: 1px solid #3165bf; border-left: 1px solid #3165bf; padding-top: ; padding-bottom:  font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;" target="_blank"><span style="padding-left:20px;padding-right:20px;font-size:18px;display:inline-block;">
+                                                        <span style="font-size: 16px; line-height: 32px;"><span style="font-size: 16px; line-height: 36px;">
+                                                            <strong>CANCEL</strong></span></span>
+                                                    </span></a>
+                                            </div>
+
+                            </div>
+ </center>
+<!-- </div> -->
+
+
+
+  </form>
+
+<div class="float-h">
+        <i class="fa fa-headphones" aria-hidden="true"></i>
+    </div>
+    
+
+{% endblock %}

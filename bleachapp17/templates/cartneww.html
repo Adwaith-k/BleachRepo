@@ -1,0 +1,575 @@
+
+{% extends 'headerfooter.html' %}
+
+{% block content %}
+{% load static %}
+
+ <div class="slider-in">
+    <div class="amg-floating-contacts wwww">
+
+
+      <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1882707">1882707</a>
+        </div>
+      </div>
+     <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+         <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone">
+          <a class="amg-nav-item" href="tel://1882707">1882707</a>
+        </div>
+      </div>
+      
+        <div class="amg-floating-contact-wrap amg-green">
+        <div class="amg-floating-icon">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </div>
+        <div class="amg-floating-link amg-floating-phone" style="font-size: 10px">
+          <a class="amg-nav-item" href="mailto:customercare@bleach-kw.com">customercare@bleach-kw.com</a>
+        </div>
+      </div>
+      
+      
+      
+       
+      
+      
+    </div>
+
+    <div class="slider stick-dots">
+  
+  
+  <div class="slider stick-dots">
+  
+  
+  
+  
+  
+    <div class="slide">
+      <div class="slide__img">
+        <img src="" alt="" data-lazy="" class="full-image animated" data-animation-in="zoomInImage"/>
+      </div>
+      <div class="slide__content">
+        <div class="slide__content--headings">
+           
+           
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide__img">
+        <img src="" alt="" data-lazy="" class="full-image animated" data-animation-in="zoomInImage"/>
+      </div>
+      <div class="slide__content">
+        <div class="slide__content--headings">
+           
+          
+           
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    
+  </div>
+    </div>
+
+
+<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+
+
+  <style type="text/css">
+   
+
+:root {
+  --color-gray: #737888;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
+}
+
+
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--color-gray);
+}
+/*
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border: 0;
+  margin: 2rem 0;
+}*/
+
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem
+}
+
+.field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#btnn {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+  width: 100%;
+  /*padding: 1rem;*/
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+#btnn:focus-visible {
+  background-color: #333;
+}
+  
+
+ @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+     .card {
+    max-width: 1000px;
+    margin-top: 130px;
+    margin-left: 270px;
+    margin-bottom: 50px;
+}
+    }
+
+
+.card-top {
+    padding: 0.7rem 5rem
+}
+
+.card-top a {
+    float: left;
+    margin-top: 0.7rem
+}
+
+#logo {
+    font-family: 'Dancing Script';
+    font-weight: bold;
+    font-size: 1.6rem
+}
+
+.card-body {
+    padding: 0 5rem 5rem 5rem;
+    background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+@media(max-width:768px) {
+    .card-body {
+        padding: 0 1rem 1rem 1rem;
+        background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+
+    .card-top {
+        padding: 0.7rem 1rem
+    }
+}
+/*
+.row {
+    margin: 0
+}
+*/
+.upper {
+    padding: 1rem 0;
+    justify-content: space-evenly
+}
+
+#three {
+    border-radius: 1rem;
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    border: 1px solid blue;
+    text-align: center;
+    display: inline-block
+}
+
+#payment {
+    margin: 0;
+    color: blue
+}
+
+.icons {
+    margin-left: auto
+}
+
+form span {
+    color: rgb(179, 179, 179)
+}
+
+form {
+    padding: 2vh 0
+}
+
+input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 13%;
+    background-color: rgb(247, 247, 247)
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+.header {
+    font-size: 1.5rem
+}
+
+.left {
+    background-color: #ffffff;
+    padding: 2vh
+}
+
+.left img {
+    width: 2rem
+}
+
+.left .col-4 {
+    padding-left: 0
+}
+
+.right .item {
+    padding: 0.3rem 0
+}
+
+.right {
+    background-color: #ffffff;
+    padding: 2vh
+}
+
+.col-8 {
+    padding: 0 1vh
+}
+
+.lower {
+    line-height: 2
+}
+
+#btnn {
+    background-color:#17a2b8;
+    border-color: rgb(23, 4, 189);
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin: 1vh 0 1.5vh 0;
+    padding: 1.5vh;
+    border-radius: 0
+}
+
+#btnn:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none
+}
+.page-wrapper{
+  background-image: url({% static 'four/images/background/pattern-12.png' %}) ;
+}
+.btn:hover {
+    color: white
+}
+
+a {
+    color: black
+}
+
+a:hover {
+    color: black;
+    text-decoration: none
+}
+
+input[type=checkbox] {
+    width: unset;
+    margin-bottom: unset
+}
+
+#cvv {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.541)), url("https://img.icons8.com/material-outlined/24/000000/help.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center
+}
+
+#cvv:hover {}
+</style>
+</head>
+
+
+
+  
+
+
+<div class="page-wrapper">
+<div id="wrapper" style=" width:150 px;height: 200 px;background-size: cover;">
+<body>
+<div class="card" style="margin-top: 80px;">
+    <div class="card-top text-center"> <a href="/newproduct/4"> Back to shop</a> <span id="logo"></span> </div>
+    <div class="card-body">
+       
+        <div class="row">
+            <div class="col-md-7">
+                <div class="left border">
+                     <div class="col-sm-12 tab1" style="margin-left: 10px;margin-right: 10px;">
+
+    <!-- <div class="container" style="background-color: #fff"> -->
+  <h2>Shipping</h2>
+  <hr />
+
+
+
+
+ <form class="form-label-left input_mask" action="/insertaddaddressurl/" id="service_form"
+                          data-area-url="{% url 'ajax_load_area' %}" method="post" enctype="multipart/form-data">
+                       
+                        {% csrf_token %}
+
+       
+
+
+
+
+{% for i in ob1 %}
+  <div class="form">
+    
+  <div class="fields fields--2">
+    <label class="field">
+      <span class="field__label" for="firstname">First name</span>
+      <input class="field__input" type="text" id="firstname" name="firstname" value="{{i.FirstName}}" />
+    </label>
+    <label class="field">
+      <span class="field__label" for="lastname">Last name</span>
+      <input class="field__input" type="text" id="lastname" name="lastname" value="{{i.LastName}}" />
+    </label>
+  </div>
+  <label class="field">
+    <span class="field__label" for="address">Address</span>
+    <input class="field__input" type="text" id="address" name="address" value="{{i.Apartment}} {{i.Floor}} {{i.Building}} {{i.Block}} {{i.Street}} {{i.Address}}" name="address" />
+  </label>
+  
+  <label class="field">
+    <span class="field__label" for="email">Email</span>
+    <input class="field__input" type="email" id="email" name="username" value="" required="" />
+  </label>{{msg}}
+  <label class="field">
+    <span class="field__label" for="country">Phone</span>
+    <input class="field__input" type="tel" name="Phone_number" id="Phone_number"  />
+    
+  </label>
+  <!--  <label class="field">
+      <span class="field__label" for="country">Country</span>
+      <input class="field__input" type="text" id="country" name="Nationality" value="{{i.Nationality}}" />
+    </label> -->
+  <div class="fields fields--2">
+   <!--  <label class="field">
+      <span class="field__label" for="zipcode">Zip code</span>
+      <input class="field__input" type="text" id="zipcode" name="zipcode" value="{{i.zipcode}}" />
+    </label> -->
+   <!--  <label class="field">
+    <span class="field__label" for="city">City</span>
+    <input class="field__input" type="text" id="city" value="{{i.Street}}  {{i.Area}}" name="Street"/>
+  </label> -->
+    <!-- <label class="field">
+      <span class="field__label" for="state">State</span>
+      <select class="field__input" id="state">
+        <option value=""></option>
+      </select>
+    </label> -->
+  </div>
+   <div class="fields fields--2">
+    <label class="field">
+      <span class="field__label" for="zipcode">Governerate</span>
+       <select id="governarateid" name="governarateid" class="form-control">
+                                    <option>select</option>
+                                    {% for f in ob2 %}
+                                    <option value={{f.id}}>{{f.Governerate_name}}</option>
+                                    {% endfor %}
+                                </select>
+    </label>
+    <label class="field">
+    <span class="field__label" for="city">Area</span>
+    <!-- <input class="field__input" type="text" id="city" value="{{i.Street}}  {{i.Area}}" name="Street"/> -->
+    <select name="Area" id="id_area" class="field__input"></select>
+  </label>
+</div>
+
+
+  
+  </div>
+  {% endfor %}
+
+<center><input type="submit" value="ADD" name="submit"class="mt-5 col-2" style="background-color: #086faa; border-radius: 15px; color: white;"></center>
+</form>
+
+
+ 
+  <!-- <a href="/addaddressurl/"><button class="button" id="btnn" style="border-radius: 15px; background-color: #086faa;">ADD</button></a><br>
+ -->
+
+
+ <!--  <a href="/editaddaddressurl/{{i.id}}"><button class="button" id="btnn"  style="width: 100px;margin-left: 150px;background-color: #086faa; border-radius: 15px;">edit</button></a>{{msg}}<br> -->
+  
+</div>
+                </div>
+            </div>
+             
+
+ 
+            <div class="col-md-5">
+                <form action="/cartordernew/" method="POST">
+    {% csrf_token %}
+
+                <div class="right border">
+
+                    <div class="header">Order Summary</div>
+                    <p>{{count}} items</p>
+                    {% for i in ob %}
+
+                    <div class="row item">
+                        <div class="col-4 align-self-center"><img class="img-fluid" src="{{i.course_id.photo}} {{i.product_id.image}}"></div>
+                        <div class="col-8">
+                            <div class="row"><b>{{i.course_id.course_price}} {{i.product_id.product_price}}</b></div>
+                            <div class="row text-muted">{{i.course_id.course_name}} {{i.product_id.product_name}}</div>
+                            <!-- <div class="row">Qty:{{i.quantity}}</div> -->
+                            {% if i.status %}
+                            <input type="hidden" id="qty_input" name="num" value="{{i.quantity}}">
+                            Qty:{{i.quantity}}&nbsp&nbsp&nbsp
+                            {% else %}
+                            <input type="number" id="qty_input" name="num" class="qty-control" value="{{i.quantity}}" min="1">
+                            {% endif %}
+
+                            <input type="hidden" value="{{i.id}}"name="id" >
+                            <input type="hidden" value="{{i.course_id.course_price}} {{i.product_id.product_price}} " name="price">
+                             <a href="/deletecartnew/{{i.id}}"><i class="fa fa-trash"></i></a>
+                           
+                            
+                        </div>
+                    </div>
+            {% endfor %}
+
+
+                    
+                    <hr>
+                    <!-- <div class="row lower">
+                        <div class="col text-left">Subtotal</div>
+                        <div class="col text-right">{{sum1}}</div>
+                    </div> -->
+                    <!-- <div class="row lower">
+                        <div class="col text-left">Delivery</div>
+                        <div class="col text-right">Free</div>
+                    </div> -->
+                    <div class="row lower">
+                        <div class="col text-left"><b>Subtotal</b></div>
+                        <div class="col text-right"><b>{{sum1}}</b></div>
+                    </div>
+                   <!--  <div class="row lower">
+                        <div class="col text-left"><a href="#"><u>Add promo code</u></a></div>
+                    </div> -->
+                    
+                     <input type="submit" name="submit" id="btnn" class="btn" value="ORDER HERE › " style="background-color: #086faa; border-radius: 50px;">
+                    <p class="text-muted text-center">Complimentary Shipping & Returns</p>
+                </div>
+        </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div> </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+
+<script src="{% static '/vendors/jquery/dist/jquery.min.js' %}"></script>
+<script>
+    $("#governarateid").change(function () {
+
+      var url = $("#service_form").attr("data-area-url");  // get the url of the `load_cities` view
+      var gId = $(this).val();  
+      // alert(gId);
+      // get the selected country ID from the HTML input
+
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'gId': gId,       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_area").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+    });
+
+    </script>
+
+{% endblock %}

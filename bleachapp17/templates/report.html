@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/ico" />
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link href="{% static '/vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static '/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static '/vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{% static '/vendors/iCheck/skins/flat/green.css' %}" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="{% static '/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{% static '/vendors/jqvmap/dist/jqvmap.min.css' %}" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="{% static '/vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{% static '/build/css/custom.min.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+                        {% include "paw.html" %}
+
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+                                    {% include "avatar.html" %}
+
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+
+{% include "sidebar.html" %}
+
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+<!--            <div class="sidebar-footer hidden-small">-->
+<!--              <a data-toggle="tooltip" data-placement="top" title="Settings">-->
+<!--                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>-->
+<!--              </a>-->
+<!--              <a data-toggle="tooltip" data-placement="top" title="FullScreen">-->
+<!--                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>-->
+<!--              </a>-->
+<!--              <a data-toggle="tooltip" data-placement="top" title="Lock">-->
+<!--                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>-->
+<!--              </a>-->
+<!--              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">-->
+<!--                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>-->
+<!--              </a>-->
+<!--            </div>-->
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+
+
+{% include "navbar.html" %}
+
+
+
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+
+
+
+
+<div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Bleach kw! <small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="card-box table-responsive">
+                          <p class="text-muted font-13 m-b-30">
+                           <form action="/dateurl/" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+        <div class="form-group">
+        <div class="row">
+        <div class="col-sm-1">
+        <label>Date From : </label>
+        </div>
+          <div class="col-md-2">
+          <input type="date" class="form-control" name="date_from" id="date_from" required>
+          </div>  
+          <div class="col-sm-1">
+        <label>Date To : </label>
+        </div>
+          <div class="col-md-2">
+          <input type="date" class="form-control" name="date_to" id="date_from" required>
+          </div> 
+          <div class="col-md-2">
+          <input type="submit" class="btn btn-primary" name="report" value="order report">
+          
+
+          </div>  
+          </div>
+          </div> 
+          </form>
+
+          <div class="form-group">
+        <div class="row">
+        <div class="col-lg-4">
+          <!-- <a href="{% url 'pdf_view' %}"><button class="btn btn-primary" name="order_pdf" value="Pdf">pdf</button></a>
+          <a href="{% url 'pdf_download' %}"><button class="btn btn-primary" name="order_pdf" value="Pdf">pdfd</button></a> -->
+
+          <!-- <input type="submit" class="btn btn-primary" name="order_excel" value="Excel"> -->
+          <!-- <input type="submit" class="btn btn-primary" name="order_csv" value="CSV"> -->
+          </div> 
+          </div>
+          </div> 
+                          </p>
+                            <h3>Order Reports</h3>
+
+
+                          <section class="content">
+    <div class="card-body">
+              <table id="example2" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ordered_at</th>
+                    <th>Customer Name</th>
+                    <th>Phone Number</th>
+                    
+                    <!-- <th>View Orders</th> -->
+                </tr>
+                </thead>
+                {% for i in od %}
+                <tbody id="orderreport">
+                    <th>{{i.id}} </th>
+
+                    <th>{{i.timestamp}} </th>
+                    <th>{{i.user_id.FirstName}} </th>
+                    <th>{{i.user_id.Phone_number}} </th>
+
+
+                    <!-- <a href="/dateurl/"><button type="submit" class="btn btn-success">view</button></a> -->
+               
+               
+
+              
+                </tbody>
+                {% endfor %}
+</table>
+</div> 
+<!-- /.Modal Order details -->
+
+                <h3 class="card-title">Order Items</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+                <div class="card-body">
+                      <table class="table table-bordered table-striped">
+                  <div class="col-lg-6">
+                  <thead>
+                <tr>
+                <th>#</th>
+                    <th>qyantity</th>
+                    <!-- <th>Quantity</th> -->
+                    <th>Amount</th>
+                    <th>custname</th>
+                    <th>item name</th>
+
+
+                </tr>
+                </thead>
+                {% for i in join %}
+                <tbody id="order-detail">
+                    <td>{{i.0}}  {{i.id  }}</td>
+                    
+
+                    <td>{{i.1}} {{i.quantity}}</td>
+                    <td>{{i.2}} {{ i.total }}</td>
+                    <td>{{i.3}} {{ i.user_id.FirstName }}</td>
+                    <td> {{ i.course_id.course_name }} {{ i.product_id.product_name }}</td>
+
+
+                    {% if i.1 %}
+                    <!-- if condition quanity null productname or coursename -->
+                    <td>{{i.5}}</td>
+                    {% else %}
+                    <td>{{i.4}}</td>
+                    {% endif %}
+
+
+
+
+
+
+
+
+                </tbody>
+                {% endfor %}
+                </div>
+                  <!-- <div id="order_result"></div> -->
+                  </table>
+                  </div>
+                <!-- /.card-body -->   
+           
+            <div class="modal-footer justify-content-between">
+            <input type="hidden" name="order_id" id="order_id"/>
+          <!-- <a href=""><button type="button" class="btn btn-primary">close</button></a> -->
+              
+              <div class="form-group">
+              <!-- <input id="update" name="update" type="submit" class="btn btn-success" value="Save updates"> -->
+                  </div>
+              <!-- </form> -->
+
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+               </div>
+
+
+
+
+
+
+    </section>
+
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static '/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static '/vendors/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static '/vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static '/vendors/nprogress/nprogress.js' %}"></script>
+    <!-- Chart.js -->
+    <script src="{% static '/vendors/Chart.js/dist/Chart.min.js' %}"></script>
+    <!-- gauge.js -->
+    <script src="{% static '/vendors/gauge.js/dist/gauge.min.js' %}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{% static '/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+    <!-- iCheck -->
+    <script src="{% static '/vendors/iCheck/icheck.min.js' %}"></script>
+    <!-- Skycons -->
+    <script src="{% static '/vendors/skycons/skycons.js' %}"></script>
+    <!-- Flot -->
+    <script src="{% static '/vendors/Flot/jquery.flot.js' %}"></script>
+    <script src="{% static '/vendors/Flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static '/vendors/Flot/jquery.flot.time.js' %}"></script>
+    <script src="{% static '/vendors/Flot/jquery.flot.stack.js' %}"></script>
+    <script src="{% static '/vendors/Flot/jquery.flot.resize.js' %}"></script>
+    <!-- Flot plugins -->
+    <script src="{% static '/vendors/flot.orderbars/js/jquery.flot.orderBars.js' %}"></script>
+    <script src="{% static '/vendors/flot-spline/js/jquery.flot.spline.min.js' %}"></script>
+    <script src="{% static '/vendors/flot.curvedlines/curvedLines.js' %}"></script>
+    <!-- DateJS -->
+    <script src="{% static '/vendors/DateJS/build/date.js' %}"></script>
+    <!-- JQVMap -->
+    <script src="{% static '/vendors/jqvmap/dist/jquery.vmap.js' %}"></script>
+    <script src="{% static '/vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
+    <script src="{% static '/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{% static '/vendors/moment/min/moment.min.js' %}"></script>
+    <script src="{% static '/vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static '/build/js/custom.min.js' %}"></script>
+
+  </body>
+</html>
